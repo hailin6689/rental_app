@@ -14,8 +14,13 @@
 </head>
 <body>
 <%= render "layouts/header" %>
+
+<div class="bg_div">
 <%= yield %>
 <%= render 'layouts/footer' %>
+</div>
+
+<%= render 'layouts/gotobtn' %>
 
 <%= debug(params) if Rails.env.development? %>
 </body>

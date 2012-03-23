@@ -1,11 +1,6 @@
-<% captions=["掀起一帘幽梦","燕郊温馨公寓","亚运村欢聚一堂","湖光山色两相宜","海豚湾一居","牡丹园五道口"]
-   prices =["￥280","￥250","￥270","￥320","￥350","￥220"]
-   sources=["商家:爱日租","商家:蚂蚁网","商家:游天下","商家:住我那","商家:途家","商家:美租网"]
-  images =["lovedream","warmapt","asiagathering","mountlakes","coastal","flowergarden"]
-%>
 <style type="text/css">
   .main_body {
-  margin: 0 10px;
+  margin: 0 15px;
   }
 
   .main_floatLeft {
@@ -19,117 +14,125 @@
   width: 684px;
   }
 
-.room_title_block {
-background: ulr("/images/room_tilebg.jpg") repeat-x scroll left center transparent;
-border-bottom: 1px solid #C3C3C3;
-}
+  .room_title_block {
+  background: url("/images/room_titlebg.jpg") repeat-x scroll left center transparent;
+  border-bottom: 1px solid #C3C3C3;
+  }
   .room_title_block h1{
   float:left;
   font-size:14px;
   font-weight: bold;
-  padding: 8px 0 8px 20px;
+  padding: 8px 8px 8px 10px;
   }
 
   .room_title_block span{
-  float:right;  
-  padding: 8px 0 8px 8px;
+  float:right;
+  padding: 8px 8px 8px 20px;
   }
 
+  ul.roomShow_list li .recommendRoom_left {
+  float: left;
+  padding-right: 5px;
+  padding-top: 5px;
+  }
+
+  ul.roomShow_list li .recommendRoom_right {
+  float: right;
+  text-align: left;
+  padding-top: 5px;
+  }
+
+
+
+
 </style>
-<!--<div style="width:1000px;margin:0 auto">-->
-  <div class="bg_div">
-    <div class="main_body">
-      <div class="float_left main_floatLeft">
-        <div class="margin_bottom_15">
-          <div class="room_title_block">
-            <h1>热门去处</h1>
-            <span>
-              <a href="#">
-                更多>>
-              </a>
-            </span>
-          </div>
-        </div>
-        
-        
-      </div>
-      <div class="float_right main_floatRight">
-        
-      </div>
-      <!--
 
-    <div style="position:relative;float:left;width:300px;height:587px;text-align:left;padding:0 10px;overflow:hidden;margin:0 auto;">
+<% captions=["掀起一帘幽梦","燕郊温馨公寓","亚运村欢聚一堂","湖光山色两相宜","海豚湾一居","牡丹园五道口"]
+   prices =["￥280","￥250","￥270","￥320","￥350","￥220"]
+   sources=["商家:爱日租","商家:蚂蚁网","商家:游天下","商家:住我那","商家:途家","商家:美租网"]
+  images =["lovedream","warmapt","asiagathering","mountlakes","coastal","flowergarden"]
+%>
 
-      <div style="height:30px;
-	border-top: 1px solid #BBBBBB;
-	background: none repeat scroll 0 0 #E8E8E8;
-	line-height:30px;
-	padding:0;">
-        <span style="float:left;margin: 0 2px;">
-          <b>热门去处</b>
-        </span>
-        <span style="float:right;">
+<div class="main_body">
+  <div class="float_left main_floatLeft margin_bottom_15">
+
+      <div class="room_title_block">
+        <h1>热门去处</h1>
+        <span>
           <a href="#">
             更多>>
           </a>
         </span>
+        <div = class="clear"></div>
       </div>
 
       <div style="height:0px;"></div>
-      
-      <% 
-        i = 0
-        while i < captions.length
-       %>
-        <div style="float:left;margin-top:10px;margin-bottom:5px;">
-        <span>
-        <a href="/ShowHouse/AAA83BF2B1D8CFB3" target="_blank">
-          <img src="/images/<%=images[i]%>.png" alt=""<%=captions[i]%>" title="<%=captions[i]%>" width="130" height="92"/>
-        </a>
-      </span>
-      <div class="room_Address">
-        <span class="TColor_535353" title=""
-          <%=captions[i]%>">
-          <%=captions[i]%>(<font color='red'>
-            <%=prices[i]%>
-          </font>)
-        </span>
-      </div>
-      <div style="color:#999;">
-        <span><%=sources[i]%></span>
-      </div>
-        </div>
-          
-          <%i += 1%>
-            <div style="float:right;margin-top:10px;margin-bottom:5px;">
-      <span>
-        <a href="/ShowHouse/AAA83BF2B1D8CFB3" target="_blank">
-          <img src="/images/<%=images[i]%>.png" alt=""<%=captions[i]%>" title="<%=captions[i]%>" width="130" height="92"/>
-        </a>
-      </span>
-      <div class="room_Address">
-        <span class="TColor_535353" title=""
-          <%=captions[i]%>">
-          <%=captions[i]%>(<font color='red'>
-            <%=prices[i]%>
-          </font>)
-        </span>
-      </div>
-      <div style="color:#999;">
-        <span><%=sources[i]%></span>
-      </div>
-            </div>
-            <div style="float:left;height:0px;width:100%;border:1px solid #999;"></div>
- <%
-  i +=1
-  end
-  %>
-    </div>
 
-    <div style="float:right;position:relative;height:587px;text-align:left;padding:0 10px;overflow:hidden;margin:0 auto;">
-      <a href=#"><img src="/images/mobile.png" alt="Mobile download" title="Mobile Download" width="684" height="70"/></a>
-    </div>
--->
-      <div class="clear"></div>
-    </div>
- </div>
+      <ul class="roomShow_list">
+
+        <% 
+i = 0
+while i < captions.length
+%>
+          <li style="background: none repeat scroll 0% 0% rgb(255,255,255);">
+            
+          <div class="recommendRoom_left">
+
+            <a href="/ShowHouse/AAA83BF2B1D8CFB3" target="_blank">
+              <img src="/images/<%=images[i]%>.png" alt="<%=captions[i]%>" title="<%=captions[i]%>" width="145" height="92"/>
+            </a>
+
+          <div class="room_Address">
+            <span class="TColor_535353" title=""
+              <%=captions[i]%>">
+              <%=captions[i]%>(<font color='red'>
+                <%=prices[i]%>
+              </font>)
+            </span>
+          </div>
+
+          <span class="TColor_999">
+            <%=sources[i]%>
+          </span>
+
+          <div class="clear"></div>
+        </div>
+
+        <% 
+          i += 1
+        %>
+            <div class="recommendRoom_right">
+                <a href="/ShowHouse/AAA83BF2B1D8CFB3" target="_blank">
+                  <img src="/images/<%=images[i]%>.png" alt="<%=captions[i]%>" title="<%=captions[i]%>" width="145" height="92"/>
+                </a>
+
+              <div class="room_Address">
+                <span class="TColor_535353" title=""
+                  <%=captions[i]%>">
+                  <%=captions[i]%>(<font color='red'>
+                    <%=prices[i]%>
+                  </font>)
+                </span>
+              </div>
+
+              <span class="TColor_999">
+                <%=sources[i]%>
+              </span>
+
+              <div class="clear"></div>
+            </div>
+
+          <div class="clear"></div>
+          </li>
+        <%
+        i +=1
+        end
+        %>
+        
+      </ul>
+  </div>
+
+  <div class="float_right main_floatRight"></div>
+    
+  <div class="clear"></div>
+</div>
