@@ -1,3 +1,8 @@
 // Place all the styles related to the Rentals controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+* html,* html body{background-attachment:fixed}
+*html #gotopbtn{
+	position:absolute; top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))-27);
+	}

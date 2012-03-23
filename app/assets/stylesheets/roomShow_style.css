@@ -1,0 +1,213 @@
+@charset "utf-8";
+/* CSS Document */
+
+.room_body{
+	margin:0 10px;
+	}
+.roomShow_block,.roomMap_block,.roomRight_block01,.roomRight_block02{
+	border:1px solid #C3C3C3;
+	}
+.room_floatLeft{
+	width:708px;
+	overflow:hidden;
+	text-align:left;
+	line-height:inherit;
+	}	
+
+.roomMap_block{
+	width:706px;
+	overflow:hidden;
+	}
+.roomMap_block ul.content_nav li{
+	_width:120px;
+	_height:31px;
+	overflow:hidden;
+	}
+
+.room_floatLeft .roomShow_block{
+	padding:10px;
+	}
+.roomType_title,.roomType_Detailed{
+	border-bottom:1px solid #e3e3e3;
+	}
+.room_floatLeft .roomShow_block .roomType_title{
+	font-size:14px;
+	line-height:1.5em;
+	padding-bottom:10px;
+	}
+.room_floatLeft .roomShow_block .roomType_Detailed{
+	padding:10px 0;}
+	
+.roomType_Detailed .roomTypeDetailed_left{
+	float:left;
+	padding-right:10px;}
+
+.roomType_Detailed .roomTypeDetailed_left ul{
+	padding:12px 0 5px 54px;
+	}
+.roomType_Detailed .roomTypeDetailed_left ul li{
+	padding:0 30px 0 20px;
+	float:left;
+	}
+.roomType_Detailed .roomTypeDetailed_left ul li.icon_bg01{
+	background:url("../images/roomShow_img/room_icon03.jpg") no-repeat left center;
+	}
+.roomType_Detailed .roomTypeDetailed_left ul li.icon_bg02{
+	background:url("../images/roomShow_img/room_icon04.jpg") no-repeat left center;
+	}
+.roomType_Detailed .roomTypeDetailed_left ul li.icon_bg03{
+	background:url("../images/roomShow_img/room_icon05.jpg") no-repeat left center;
+	}
+.roomTypeDetailed_right{
+	width:250px;
+	float:left;}
+.roomTypeDetailed_right h1,.roomTypeDetailed_Price{
+	padding:5px 0 10px;}
+.roomTypeDetailed_right h1{
+	font-size:18px; margin-right:5px;
+	font-weight:bold;
+	float:left;
+	width:100px;
+	}
+	
+/*房间属性详情*/
+ul.room_Detailed_list{ border-top:1px dotted #ccc;}
+ul.room_Detailed_list li{ border-bottom:1px dotted #ccc; height:auto; _height:25px; display: block;}
+ul.room_Detailed_list li.alt{ background-color: #FAFAFA;}
+ul.room_Detailed_list li span{ display:block;}
+ul.room_Detailed_list li span.typeName{ float:left; font-weight: bold;
+    padding: 8px 0 8px 5px;
+    text-align: left;
+    width: 70px;}
+ul.room_Detailed_list li span.typeValue{ float:left;  padding: 8px 4px 8px 0;
+    text-align:left;
+    width: 160px;}
+/*房间属性详情 end*/
+	
+.roomTypeDetailed_right .roomTypeDetailed_Price{
+	padding-top:0;
+	float:left;
+	width:145px;
+	}
+.roomTypeDetailed_right .roomTypeDetailed_Price span{
+	padding-right:10px;
+	}
+.roomTypeDetailed_right .roomTypeDetailed_Price span font{
+	font-size:24px;
+	font-weight:bold;
+	color:#e20000;
+	}	
+	
+.roomTypeDetailed_right .roomTypeDetailed_button{
+	margin-top:10px;
+	margin-bottom:10px;
+	color:#999;
+	background:url("../images/roomShow_img/room_buttonBg.jpg") repeat-x left center;
+	width:120px;
+	border:1px solid #d3a80c;
+	}
+
+.roomTypeDetailed_button a,.roomTypeDetailed_button a:visited{
+	display:block;
+	padding:5px 0;
+	background:url("../images/roomShow_img/room_buttonIcon.png") no-repeat 85px center;
+	text-align:center;
+	font-size:14px;
+	font-weight:bold;
+	color:#333;
+	}
+
+ul.roomTypeDetailed_Service{
+	height:25px;
+	}
+ul.roomTypeDetailed_Service li{
+	float:left;
+	padding:3px 0;
+	}
+ul.roomTypeDetailed_Service li.submit_form{
+	padding-left:20px;
+	padding-right:10px;
+	background:url("../images/roomShow_img/room_icon01.jpg") no-repeat left center;
+	}
+
+ul.roomTypeDetailed_Service li.submit_phone{
+	padding-left:20px;
+	background:url("../images/roomShow_img/room_icon02.jpg") no-repeat left center;
+	}
+.roomType_From{padding-top:10px;}		
+.roomType_From .roomType_FromImg,.roomType_From p{
+	float:left;}
+.roomType_From .roomType_FromImg img{
+	padding-right:10px;
+	width:112px;}
+.roomType_From p{
+	width:555px;
+	_width:545px;
+	line-height:1.5em;
+	}
+
+
+.room_floatRight{
+	width:262px;
+	}
+
+.roomRight_title_block{
+	background:url("../images/roomShow_img/room_titleBg.jpg") repeat-x left center;
+	border-bottom:1px solid #c3c3c3;
+	_height:35px;
+	_overflow:hidden;
+	}
+.roomRight_title_block h1{
+	padding:8px 0 8px 20px;
+	font-size:14px;
+	float:left;
+	font-weight:bold;
+	}
+.roomRight_title_block span{
+	display:block;
+	float:right;
+	padding:10px 10px 10px 0px;
+	}
+ul.roomShow_list li{
+	border-bottom:1px solid #ddd;
+	padding:5px 0;
+	*+height:100%;
+	*+overflow:hidden;
+	}
+ul.roomShow_list li.last{
+	border:0;}
+ul.roomShow_list li .recommendRoom_img{
+	float:left; padding-right:8px;}
+
+ul.roomShow_list li .recommendRoom_type{
+	float:left; width:125px;
+	padding-top:5px;
+	text-align:left;
+	}
+
+ul.roomShow_list li .recommendRoom_type a{
+	display:block; padding-bottom:5px;
+	font-size:inherit;
+	}
+ul.roomShow_list li .recommendRoom_type p{
+	padding-bottom:5px; text-align:left; font-size:inherit;}
+ul.roomShow_list li .recommendRoom_type p font{
+	text-align:left; font-size:12px;}
+ul.roomShow_list li .recommendRoom_type span font{
+	color:#f52c93; font-size:12px;}
+
+.room_floatRight .roomRight_block02{
+	}
+
+.roomVerify_position .roomVerify_body{
+	top:-60px;
+	
+	}
+
+a.roomVerify_position{
+	cursor: default;
+	}
+
+
+
+

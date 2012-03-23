@@ -1,0 +1,248 @@
+@charset "utf-8";
+/* CSS Document */
+
+h2{
+	font-size:24px;
+}
+.contrast_body{
+	}
+.contrast_show,.contrast_title{
+	margin:0 10px;}
+.contrast_title{
+	padding:10px 0;
+	text-align:center;
+	font-size:16px;
+	font-weight:bold;
+	background:url("../images/search_img/contrast_title01.png") repeat-x left bottom;
+	}
+.contrast_table td,.contrast_table th{
+	text-align:center;
+	padding:12px;
+	}
+.contrast_table{
+	border-collapse: collapse;
+	border-top:1px solid #ddd;
+	border-left: 1px solid #ddd;
+	padding:0;
+	}
+.contrast_table th{
+	border-bottom:1px solid #ddd;
+	border-right: 1px solid #ddd;
+	background-color:#F5F5F5;
+	width: 100px;
+	font-weight:bold;
+	vertical-align:middle;	
+}
+.contrast_table td{
+	border-bottom:1px solid #ddd;
+	border-right: 1px solid #ddd;
+	width: 220px;
+	vertical-align:middle;
+	}
+.contrast_table td.CT_bor_dashed{
+	border-bottom:1px dashed #ddd;
+	}
+
+.contrast_table th.CT_title_head{
+	background-color:#fff;
+	vertical-align:middle;
+	}
+
+
+
+/***********对比功能样式**************/
+em, i { font-style: normal;}
+
+.R_Contrast .pro ul li .close, .R_Contrast .RC_tab i, .R_Contrast .pro ul li .close:hover, .R_Contrast .fold, .R_Contrast .tab .tab-span i, .R_Contrast .tab .tab-span .on, .R_Contrast .tab i, .R_Contrast .tab i.on, .R_Contrast .pro .option .cpClear, .R_Contrast .pro .option .cpVsBtn, .R_Contrast .pro_th .cbIcon, .R_Contrast .pro_th .cbIcon:hover, .R_Contrast .user .msg {
+	background:url("../images/search_img/compare_bg.png") no-repeat;
+	}
+
+.R_Contrast{
+	position:fixed;
+	bottom:0;
+	left:50%;
+	margin-left:-500px;
+	width:1000px;
+	z-index:10;
+	}
+	
+.R_Contrast .bar{
+	height:26px;
+	border-top: 1px solid #BBBBBB;
+	background: none repeat scroll 0 0 #E8E8E8;
+	line-height:26px;
+	padding:0;
+	}
+.R_Contrast .RC_tab{
+	float:left;}
+	
+.R_Contrast .tab-title{
+	background: none repeat scroll 0 0 #D3D3D3;
+    border-right: 1px solid #BBBBBB;
+    color: #777777;
+    float: left;
+    text-align: center;
+    width: 65px;
+	}
+.R_Contrast .RC_tab i {
+    background-position: 85px -162px;
+    border-right: 1px solid #BBBBBB;
+    color: #333333;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    padding-right: 12px;
+    text-align: center;
+    width: 99px;
+}
+.R_Contrast .RC_tab i.iHover{
+	background-color:#fff;
+	color:#333;
+	text-decoration:none;}
+.R_Contrast .RC_tab i.on {
+    background-color: #FF6600;
+    background-position: 85px -182px;
+    border-right: medium none;
+    color: #FFFFFF;
+    height: 27px;
+    margin-left: -1px;
+    margin-top: -1px;
+    position: relative;
+    width: 101px;
+}
+
+
+	
+.R_Contrast .fold{
+	background-color: #D3D3D3;
+    background-position: 8px -206px;
+    border-left: 1px solid #BBBBBB;
+    border-right: 1px solid #BBBBBB;
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    height: 26px;
+    width: 29px;
+	}
+
+.R_Contrast .pro {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 2px solid #FF6600;
+    margin: 0 auto;
+    overflow: hidden;
+    width: 986px;
+	}
+.R_Contrast .pro_th {
+    background: none repeat scroll 0 0 #F5F5F5;
+    border-bottom: 1px solid #D7D7D7;
+    height: 27px;
+    line-height: 27px;
+	}
+.R_Contrast .pro_th .cbIcon {
+    background-position: 10px -143px;
+    cursor: pointer;
+    display: block;
+    float: right;
+    height: 27px;
+    width: 31px;
+}
+.R_Contrast .pro_th .cbIcon:hover{
+	background-color:#E3E3E3;
+	background-position:10px -143px;
+	}
+
+
+.fl, .mark { float: left;}
+.R_Contrast .pro_th .mark {
+    color: #777777;
+    padding: 0 0 0 10px;
+	}
+.R_Contrast .pro_th .mark b { color: #333333; font-weight: bold;}
+.R_Contrast .pro_th .cbIcon {
+    background-position: 10px -143px;
+    cursor: pointer;
+    display: block;
+    float: right;
+    height: 27px;
+    width: 31px;
+}
+
+/*小房间列表*/
+.R_Contrast .pro ul {
+    float: left;
+    height: 81px;
+    overflow: hidden;
+}
+.R_Contrast .pro ul li {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-right: 1px solid #D7D7D7;
+    display: inline;
+    float: left;
+    height: 81px;
+    position: relative;
+    width: 218px;
+}
+.R_Contrast .pro ul li i {
+    float: left;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+.R_Contrast .pro ul li .pic {
+    left: 3px;
+    position: absolute;
+    top: 15px;
+}
+.R_Contrast .pro ul li img {
+    border: 1px solid #D7D7D7;
+	vertical-align: middle;
+}
+.R_Contrast .pro ul li .tit {
+    height: 36px;
+    margin: 15px 0 0 72px;
+    overflow: hidden;
+    width: 140px;
+} 
+.R_Contrast .pro ul li .price {
+    margin-left: 72px;
+    width: 100px;
+}
+.R_Contrast .pro ul li .close {
+    background-position: 0 -65px;
+    cursor: pointer;
+    display: block;
+    height: 15px;
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    width: 15px;
+}
+.R_Contrast .pro ul li .close:hover{
+	background-position:0 -92px;
+	}
+.R_Contrast .pro .option {
+    float: left;
+    line-height: 26px;
+    padding: 20px 0 0 10px;
+}
+.R_Contrast .pro .option .cpVsBtn {
+    background-position: 0 0;
+    color: #FFFFFF;
+    display: inline-block;
+    height: 23px;
+    line-height: 24px;
+    margin: 0 0 5px;
+    text-align: center;
+    text-decoration: none;
+    width: 69px;
+}
+.R_Contrast .pro .option .cpClear {
+    background-position: 0 -120px;
+    color: #333333;
+	display:block;
+    padding: 0 0 0 18px;
+	cursor:pointer;
+}
+
+/*小房间列表 end*/
+
+/***********对比功能样式**************/

@@ -1,0 +1,571 @@
+﻿<!--<script type="text/javascript" src="/js/ie6.js"></script>-->
+<script language="Javascript">
+    $(document).ready(function () {
+        $(".location").click(function () {
+            $("#cityPop").toggle();
+        });
+        $('#q').keydown(function (e) {
+            var key = window.event ? e.keyCode : e.which;
+            if (key.toString() == "13") {
+                $("#search_button").click();
+            }
+        });
+        $("#search_button").click(function () {
+            var q = $('#q').val();
+            q.replace('/', '');
+            q.replace('\\', '');
+            var q = q == '输入您要入住地址、商圈、关键字' ? '' : 'q/' + encodeURIComponent($('#q').val());
+            location.href = "http://www.souduanzu.com/list/" + q;
+            //		location.href = "http://www.souduanzu.com/list/price_day/1500,2000/" + q;
+        });
+
+        $("ul.header_top_nav li").hover(function () {
+            $(this).addClass("hover");
+        }, function () {
+            $(this).removeClass("hover");
+        }).click(function () {
+            $(this).addClass("selected");
+            $("ul.header_top_nav li").not($(this)).removeClass("selected");
+        });
+
+        $("#citys-tab > a").click(function () {
+            $('#cityPop').show();
+            $("#citys-tab > a").removeClass('current');
+            $("#citys > div").css({ "display": "none" });
+            $(this).addClass('current');
+            var className = '.' + $(this).attr("Id");
+            $(className).css({ "display": "block" });
+        });
+    });
+</script>
+
+
+<div class="header margin_bottom_15">
+	<div class="header_top">
+    	<div class="bg_div header_top_bgColor">
+            <ul class="header_top_nav">
+            	<li><a href="/">首页</a></li>
+				<li class="line_text"><a href="/SiteNav">短租导航</a></li>
+				<li><a href="/app">移动搜短租<img class="new" align="new" src="/images/news.gif"></a></li>
+                <!--<li><a href="/Media">媒体报道</a></li>-->
+                <li><a href="/AboutUs">关于我们</a></li>
+                <li><a href="/AboutUs">联系我们</a></li>
+                
+            </ul>
+            
+            <!--广告语-->
+            <ul class="header_pp">
+            	<li class="pp_Img01 pp_Img11" title="中国最大的短租房源搜索平台" > </li>
+            <!--<li class="pp_Img02" title="海量短租房源——搜索比价，帮您找到合适的短租房子和价格"></li>
+                <li class="pp_Img03" title="便捷检索——节省了逐个访问租房网站的时间"></li>-->
+            </ul>
+            
+            <!--广告语 end-->
+            <div class="clear"></div>
+       </div>
+   </div>
+   <div class="clear"></div> 
+      <div class="bg_div header_block">
+        <div id="header_Logo">
+            <div class="header_Logo_img">
+                <a alt="搜短租网" title="搜短租网" href="/"></a>
+            </div>
+        </div>
+        
+        <!--搜索区-->
+        <div id="header_city" class="bor_radius_3">
+            <a class="location">北京</a>
+            <div id="cityPop" class="bC" style="top:52px; left: 240px; display: none; ">
+                <div id="citys-title" class="title">
+                    <a class="close" onclick="$(this).parent().parent().hide()"></a>
+                </div>
+				<div id="citys-tab" class="tab">
+					<a id="citys-0" class="current">热门</a>
+										<a id="citys-1" href="JavaScript:;">AB</a>
+										<a id="citys-2" href="JavaScript:;">CD</a>
+										<a id="citys-3" href="JavaScript:;">EFGH</a>
+										<a id="citys-4" href="JavaScript:;">JK</a>
+										<a id="citys-5" href="JavaScript:;">LMN</a>
+										<a id="citys-6" href="JavaScript:;">PQR</a>
+										<a id="citys-7" href="JavaScript:;">ST</a>
+										<a id="citys-8" href="JavaScript:;">WX</a>
+										<a id="citys-9" href="JavaScript:;">YZ</a>
+									</div>
+				<div id="citys" class="center">
+					<div class="citys-0" style="display: block;">
+											<a href="/list/city/beijing"><font style='font-weight:bold;'>北京</font></a>
+											<a href="/list/city/sanya"><font style='font-weight:bold;'>三亚</font></a>
+											<a href="/list/city/shanghai"><font style='font-weight:bold;'>上海</font></a>
+											<a href="/list/city/guangzhou"><font style='font-weight:bold;'>广州</font></a>
+											<a href="/list/city/shenzhen"><font style='font-weight:bold;'>深圳</font></a>
+											<a href="/list/city/qingdao"><font style='font-weight:bold;'>青岛</font></a>
+											<a href="/list/city/hangzhou"><font style='font-weight:bold;'>杭州</font></a>
+											<a href="/list/city/xian"><font style='font-weight:bold;'>西安</font></a>
+											<a href="/list/city/chengdu"><font style='font-weight:bold;'>成都</font></a>
+											<a href="/list/city/chongqing"><font style='font-weight:bold;'>重庆</font></a>
+											<a href="/list/city/nanjing"><font style='font-weight:bold;'>南京</font></a>
+											<a href="/list/city/shenyang"><font style='font-weight:bold;'>沈阳</font></a>
+											<a href="/list/city/jinan"><font style='font-weight:bold;'>济南</font></a>
+											<a href="/list/city/changsha"><font style='font-weight:bold;'>长沙</font></a>
+											<a href="/list/city/zhengzhou"><font style='font-weight:bold;'>郑州</font></a>
+											<a href="/list/city/suzhou"><font style='font-weight:bold;'>苏州</font></a>
+											<a href="/list/city/wuhan"><font style='font-weight:bold;'>武汉</font></a>
+											<a href="/list/city/xianggang"><font style='font-weight:bold;'>香港</font></a>
+										</div>
+											<div class="citys-1" style="display: none;">
+													<a href="/list/city/beijing"><font style='font-weight:bold;color:#000000'>北京</font></a>
+													<a href="/list/city/akesu">阿克苏</a>
+													<a href="/list/city/anning">安宁</a>
+													<a href="/list/city/anqing">安庆</a>
+													<a href="/list/city/anshan">鞍山</a>
+													<a href="/list/city/anshun">安顺</a>
+													<a href="/list/city/anyang">安阳</a>
+													<a href="/list/city/baicheng">白城</a>
+													<a href="/list/city/baishan">白山</a>
+													<a href="/list/city/baiyin">白银</a>
+													<a href="/list/city/bengbu">蚌埠</a>
+													<a href="/list/city/baoding">保定</a>
+													<a href="/list/city/baoji">宝鸡</a>
+													<a href="/list/city/baoshan">保山</a>
+													<a href="/list/city/bazhong">巴中</a>
+													<a href="/list/city/beihai">北海</a>
+													<a href="/list/city/benxi">本溪</a>
+													<a href="/list/city/binzhou">滨州</a>
+													<a href="/list/city/bole">博乐</a>
+													<a href="/list/city/bozhou">亳州</a>
+													<a href="/list/city/ankang">安康</a>
+													<a href="/list/city/baotou">包头</a>
+													<a href="/list/city/aomen">澳门</a>
+												</div>
+											<div class="citys-2" style="display: none;">
+													<a href="/list/city/chongqing"><font style='font-weight:bold;color:#000000'>重庆</font></a>
+													<a href="/list/city/cangzhou">沧州</a>
+													<a href="/list/city/changde">常德</a>
+													<a href="/list/city/changji">昌吉</a>
+													<a href="/list/city/changshu">常熟</a>
+													<a href="/list/city/changzhou">常州</a>
+													<a href="/list/city/chaohu">巢湖</a>
+													<a href="/list/city/chaoyang">朝阳</a>
+													<a href="/list/city/chaozhou">潮州</a>
+													<a href="/list/city/chengde">承德</a>
+													<a href="/list/city/chengdu"><font style='font-weight:bold;color:#000000'>成都</font></a>
+													<a href="/list/city/chenggu">城固</a>
+													<a href="/list/city/chenzhou">郴州</a>
+													<a href="/list/city/chibi">赤壁</a>
+													<a href="/list/city/chifeng">赤峰</a>
+													<a href="/list/city/chishui">赤水</a>
+													<a href="/list/city/chizhou">池州</a>
+													<a href="/list/city/chongzuo">崇左</a>
+													<a href="/list/city/chuxiong">楚雄</a>
+													<a href="/list/city/chuzhou">滁州</a>
+													<a href="/list/city/cixi">慈溪</a>
+													<a href="/list/city/conghua">从化</a>
+													<a href="/list/city/dali">大理</a>
+													<a href="/list/city/dalian">大连</a>
+													<a href="/list/city/dandong">丹东</a>
+													<a href="/list/city/danyang">丹阳</a>
+													<a href="/list/city/daqing">大庆</a>
+													<a href="/list/city/datong">大同</a>
+													<a href="/list/city/dazhou">达州</a>
+													<a href="/list/city/deyang">德阳</a>
+													<a href="/list/city/dezhou">德州</a>
+													<a href="/list/city/dongguan">东莞</a>
+													<a href="/list/city/dongyang">东阳</a>
+													<a href="/list/city/dongying">东营</a>
+													<a href="/list/city/douyun">都匀</a>
+													<a href="/list/city/dunhua">敦化</a>
+													<a href="/list/city/changchun">长春</a>
+													<a href="/list/city/changhai">长海</a>
+													<a href="/list/city/changle">长乐</a>
+													<a href="/list/city/changsha"><font style='font-weight:bold;color:#000000'>长沙</font></a>
+													<a href="/list/city/changzhi">长治</a>
+												</div>
+											<div class="citys-3" style="display: none;">
+													<a href="/list/city/eerduosi">鄂尔多斯</a>
+													<a href="/list/city/enshi">恩施</a>
+													<a href="/list/city/fangchenggang">防城港</a>
+													<a href="/list/city/feicheng">肥城</a>
+													<a href="/list/city/fenghua">奉化</a>
+													<a href="/list/city/fushun">抚顺</a>
+													<a href="/list/city/fuxin">阜新</a>
+													<a href="/list/city/fuyang">阜阳</a>
+													<a href="/list/city/fuyang1">富阳</a>
+													<a href="/list/city/fuzhou">福州</a>
+													<a href="/list/city/fuzhou1">抚州</a>
+													<a href="/list/city/ganyu">赣榆</a>
+													<a href="/list/city/ganzhou">赣州</a>
+													<a href="/list/city/gaoming">高明</a>
+													<a href="/list/city/gaoyou">高邮</a>
+													<a href="/list/city/geermu">格尔木</a>
+													<a href="/list/city/gejiu">个旧</a>
+													<a href="/list/city/gongyi">巩义</a>
+													<a href="/list/city/guangan">广安</a>
+													<a href="/list/city/guangyuan">广元</a>
+													<a href="/list/city/guangzhou"><font style='font-weight:bold;color:#000000'>广州</font></a>
+													<a href="/list/city/gubaotou">古包头</a>
+													<a href="/list/city/guigang">贵港</a>
+													<a href="/list/city/guilin">桂林</a>
+													<a href="/list/city/guiyang">贵阳</a>
+													<a href="/list/city/guyuan">固原</a>
+													<a href="/list/city/haerbin">哈尔滨</a>
+													<a href="/list/city/haicheng">海城</a>
+													<a href="/list/city/haikou">海口</a>
+													<a href="/list/city/haimen">海门</a>
+													<a href="/list/city/haining">海宁</a>
+													<a href="/list/city/hami">哈密</a>
+													<a href="/list/city/handan">邯郸</a>
+													<a href="/list/city/hangzhou"><font style='font-weight:bold;color:#000000'>杭州</font></a>
+													<a href="/list/city/hanzhong">汉中</a>
+													<a href="/list/city/hebi">鹤壁</a>
+													<a href="/list/city/hefei">合肥</a>
+													<a href="/list/city/hengshui">衡水</a>
+													<a href="/list/city/hengyang">衡阳</a>
+													<a href="/list/city/hetian">和田</a>
+													<a href="/list/city/heyuan">河源</a>
+													<a href="/list/city/heze">菏泽</a>
+													<a href="/list/city/huadou">花都</a>
+													<a href="/list/city/huaian">淮安</a>
+													<a href="/list/city/huaibei">淮北</a>
+													<a href="/list/city/huaihua">怀化</a>
+													<a href="/list/city/huainan">淮南</a>
+													<a href="/list/city/huanggang">黄冈</a>
+													<a href="/list/city/huangshan">黄山</a>
+													<a href="/list/city/huangshi">黄石</a>
+													<a href="/list/city/huhehaote">呼和浩特</a>
+													<a href="/list/city/huizhou">惠州</a>
+													<a href="/list/city/huludao">葫芦岛</a>
+													<a href="/list/city/huzhou">湖州</a>
+													<a href="/list/city/foshan">佛山</a>
+													<a href="/list/city/fuqing">福清</a>
+													<a href="/list/city/ezhou">鄂州</a>
+													<a href="/list/city/fuling">涪陵</a>
+													<a href="/list/city/gongzhuling">公主岭</a>
+													<a href="/list/city/gaoxiong">高雄</a>
+												</div>
+											<div class="citys-4" style="display: none;">
+													<a href="/list/city/jiamusi">佳木斯</a>
+													<a href="/list/city/jian">吉安</a>
+													<a href="/list/city/jiangdou">江都</a>
+													<a href="/list/city/jiangmen">江门</a>
+													<a href="/list/city/jiangyin">江阴</a>
+													<a href="/list/city/jiaonan">胶南</a>
+													<a href="/list/city/jiaozhou">胶州</a>
+													<a href="/list/city/jiaozuo">焦作</a>
+													<a href="/list/city/jiashan">嘉善</a>
+													<a href="/list/city/jiaxing">嘉兴</a>
+													<a href="/list/city/jiexiu">介休</a>
+													<a href="/list/city/jilin">吉林</a>
+													<a href="/list/city/jimo">即墨</a>
+													<a href="/list/city/jinan"><font style='font-weight:bold;color:#000000'>济南</font></a>
+													<a href="/list/city/jincheng">晋城</a>
+													<a href="/list/city/jingdezhen">景德镇</a>
+													<a href="/list/city/jinghong">景洪</a>
+													<a href="/list/city/jingjiang">靖江</a>
+													<a href="/list/city/jingmen">荆门</a>
+													<a href="/list/city/jingzhou">荆州</a>
+													<a href="/list/city/jinhua">金华</a>
+													<a href="/list/city/jining1">集宁</a>
+													<a href="/list/city/jining">济宁</a>
+													<a href="/list/city/jinjiang">晋江</a>
+													<a href="/list/city/jintan">金坛</a>
+													<a href="/list/city/jinzhong">晋中</a>
+													<a href="/list/city/jinzhou">锦州</a>
+													<a href="/list/city/jishou">吉首</a>
+													<a href="/list/city/jiujiang">九江</a>
+													<a href="/list/city/jiuquan">酒泉</a>
+													<a href="/list/city/jixi">鸡西</a>
+													<a href="/list/city/jiyuan">济源</a>
+													<a href="/list/city/jurong">句容</a>
+													<a href="/list/city/kaifeng">开封</a>
+													<a href="/list/city/kaili">凯里</a>
+													<a href="/list/city/kaiping">开平</a>
+													<a href="/list/city/kaiyuan">开远</a>
+													<a href="/list/city/kashen">喀什</a>
+													<a href="/list/city/kelamayi">克拉玛依</a>
+													<a href="/list/city/kuerle">库尔勒</a>
+													<a href="/list/city/kuitun">奎屯</a>
+													<a href="/list/city/kunming">昆明</a>
+													<a href="/list/city/kunshan">昆山</a>
+													<a href="/list/city/jiangyou">江油</a>
+													<a href="/list/city/jiangyan">姜堰</a>
+													<a href="/list/city/jilong">基隆</a>
+												</div>
+											<div class="citys-5" style="display: none;">
+													<a href="/list/city/laibin">来宾</a>
+													<a href="/list/city/laiwu">莱芜</a>
+													<a href="/list/city/laixi">莱西</a>
+													<a href="/list/city/laizhou">莱州</a>
+													<a href="/list/city/langfang">廊坊</a>
+													<a href="/list/city/lanzhou">兰州</a>
+													<a href="/list/city/lasa">拉萨</a>
+													<a href="/list/city/leshan">乐山</a>
+													<a href="/list/city/lianyungang">连云港</a>
+													<a href="/list/city/liaocheng">聊城</a>
+													<a href="/list/city/liaoyang">辽阳</a>
+													<a href="/list/city/liaoyuan">辽源</a>
+													<a href="/list/city/lijiang">丽江</a>
+													<a href="/list/city/linan">临安</a>
+													<a href="/list/city/lincang">临沧</a>
+													<a href="/list/city/linfen">临汾</a>
+													<a href="/list/city/lingbao">灵宝</a>
+													<a href="/list/city/linhe">临河</a>
+													<a href="/list/city/linxia">临夏</a>
+													<a href="/list/city/linyi">临沂</a>
+													<a href="/list/city/lishui">丽水</a>
+													<a href="/list/city/liuan">六安</a>
+													<a href="/list/city/liupanshui">六盘水</a>
+													<a href="/list/city/liuzhou">柳州</a>
+													<a href="/list/city/liyang">溧阳</a>
+													<a href="/list/city/longhai">龙海</a>
+													<a href="/list/city/longyan">龙岩</a>
+													<a href="/list/city/loudi">娄底</a>
+													<a href="/list/city/luohe">漯河</a>
+													<a href="/list/city/luoyang">洛阳</a>
+													<a href="/list/city/luxi">潞西</a>
+													<a href="/list/city/luzhou">泸州</a>
+													<a href="/list/city/lvliang">吕梁</a>
+													<a href="/list/city/lvshun">旅顺</a>
+													<a href="/list/city/maanshan">马鞍山</a>
+													<a href="/list/city/maoming">茂名</a>
+													<a href="/list/city/meihekou">梅河口</a>
+													<a href="/list/city/meishan">眉山</a>
+													<a href="/list/city/meizhou">梅州</a>
+													<a href="/list/city/mianxian">勉县</a>
+													<a href="/list/city/mianyang">绵阳</a>
+													<a href="/list/city/mudanjiang">牡丹江</a>
+													<a href="/list/city/nanan">南安</a>
+													<a href="/list/city/nanchang">南昌</a>
+													<a href="/list/city/nanchong">南充</a>
+													<a href="/list/city/nanjing"><font style='font-weight:bold;color:#000000'>南京</font></a>
+													<a href="/list/city/nanning">南宁</a>
+													<a href="/list/city/nanping">南平</a>
+													<a href="/list/city/nantong">南通</a>
+													<a href="/list/city/nanyang">南阳</a>
+													<a href="/list/city/neijiang">内江</a>
+													<a href="/list/city/ningbo">宁波</a>
+													<a href="/list/city/ningde">宁德</a>
+													<a href="/list/city/liling">醴陵</a>
+												</div>
+											<div class="citys-6" style="display: none;">
+													<a href="/list/city/panjin">盘锦</a>
+													<a href="/list/city/panzhihua">攀枝花</a>
+													<a href="/list/city/penglai">蓬莱</a>
+													<a href="/list/city/pingdingshan">平顶山</a>
+													<a href="/list/city/pingdu">平度</a>
+													<a href="/list/city/pinghu">平湖</a>
+													<a href="/list/city/pingliang">平凉</a>
+													<a href="/list/city/pingxiang">萍乡</a>
+													<a href="/list/city/pulandian">普兰店</a>
+													<a href="/list/city/puning">普宁</a>
+													<a href="/list/city/putian">莆田</a>
+													<a href="/list/city/puyang">濮阳</a>
+													<a href="/list/city/qiannan">黔南</a>
+													<a href="/list/city/qidong">启东</a>
+													<a href="/list/city/qingdao"><font style='font-weight:bold;color:#000000'>青岛</font></a>
+													<a href="/list/city/qingyang">庆阳</a>
+													<a href="/list/city/qingyuan">清远</a>
+													<a href="/list/city/qingzhou">青州</a>
+													<a href="/list/city/qinhuangdao">秦皇岛</a>
+													<a href="/list/city/qinzhou">钦州</a>
+													<a href="/list/city/qionghai">琼海</a>
+													<a href="/list/city/qiqihaer">齐齐哈尔</a>
+													<a href="/list/city/quanzhou">泉州</a>
+													<a href="/list/city/qujing">曲靖</a>
+													<a href="/list/city/quzhou">衢州</a>
+													<a href="/list/city/rikaze">日喀则</a>
+													<a href="/list/city/rizhao">日照</a>
+													<a href="/list/city/rongcheng">荣成</a>
+													<a href="/list/city/rugao">如皋</a>
+													<a href="/list/city/ruian">瑞安</a>
+													<a href="/list/city/rushan">乳山</a>
+													<a href="/list/city/qitaihe">七台河</a>
+												</div>
+											<div class="citys-7" style="display: none;">
+													<a href="/list/city/shanghai"><font style='font-weight:bold;color:#000000'>上海</font></a>
+													<a href="/list/city/tianjin">天津</a>
+													<a href="/list/city/sanmenxia">三门峡</a>
+													<a href="/list/city/sanming">三明</a>
+													<a href="/list/city/sanya"><font style='font-weight:bold;color:#000000'>三亚</font></a>
+													<a href="/list/city/shangluo">商洛</a>
+													<a href="/list/city/shangqiu">商丘</a>
+													<a href="/list/city/shangrao">上饶</a>
+													<a href="/list/city/shangyu">上虞</a>
+													<a href="/list/city/shantou">汕头</a>
+													<a href="/list/city/shaoguan">韶关</a>
+													<a href="/list/city/shaoxing">绍兴</a>
+													<a href="/list/city/shaoyang">邵阳</a>
+													<a href="/list/city/shenyang"><font style='font-weight:bold;color:#000000'>沈阳</font></a>
+													<a href="/list/city/shenzhen"><font style='font-weight:bold;color:#000000'>深圳</font></a>
+													<a href="/list/city/shihezi">石河子</a>
+													<a href="/list/city/shijiazhuang">石家庄</a>
+													<a href="/list/city/shilin">石林</a>
+													<a href="/list/city/shishi">石狮</a>
+													<a href="/list/city/shiyan">十堰</a>
+													<a href="/list/city/shouguang">寿光</a>
+													<a href="/list/city/shuangyashan">双鸭山</a>
+													<a href="/list/city/shuozhou">朔州</a>
+													<a href="/list/city/shuyang">沭阳</a>
+													<a href="/list/city/simao">思茅</a>
+													<a href="/list/city/siping">四平</a>
+													<a href="/list/city/songyuan">松原</a>
+													<a href="/list/city/suining">遂宁</a>
+													<a href="/list/city/suizhou">随州</a>
+													<a href="/list/city/suzhou"><font style='font-weight:bold;color:#000000'>苏州</font></a>
+													<a href="/list/city/tacheng">塔城</a>
+													<a href="/list/city/taian">泰安</a>
+													<a href="/list/city/taicang">太仓</a>
+													<a href="/list/city/taixing">泰兴</a>
+													<a href="/list/city/taiyuan">太原</a>
+													<a href="/list/city/taizhou">泰州</a>
+													<a href="/list/city/taizhou1">台州</a>
+													<a href="/list/city/tangshan">唐山</a>
+													<a href="/list/city/tengchong">腾冲</a>
+													<a href="/list/city/tengzhou">滕州</a>
+													<a href="/list/city/tianmen">天门</a>
+													<a href="/list/city/tianshui">天水</a>
+													<a href="/list/city/tieling">铁岭</a>
+													<a href="/list/city/tongchuan">铜川</a>
+													<a href="/list/city/tongliao">通辽</a>
+													<a href="/list/city/tongling">铜陵</a>
+													<a href="/list/city/tonglu">桐庐</a>
+													<a href="/list/city/tongren">铜仁</a>
+													<a href="/list/city/tongxiang">桐乡</a>
+													<a href="/list/city/tongzhou">通州</a>
+													<a href="/list/city/tonghua">通化</a>
+													<a href="/list/city/tulufan">吐鲁番</a>
+													<a href="/list/city/suqian">宿迁</a>
+													<a href="/list/city/suyu">宿豫</a>
+													<a href="/list/city/suzhou1">宿州</a>
+													<a href="/list/city/shaowu">邵武</a>
+													<a href="/list/city/songjiang">松江</a>
+													<a href="/list/city/shexian">歙县</a>
+													<a href="/list/city/taibei">台北</a>
+													<a href="/list/city/taiwan">台湾</a>
+												</div>
+											<div class="citys-8" style="display: none;">
+													<a href="/list/city/xiamen">厦门</a>
+													<a href="/list/city/wafangdian">瓦房店</a>
+													<a href="/list/city/weifang">潍坊</a>
+													<a href="/list/city/weihai">威海</a>
+													<a href="/list/city/weinan">渭南</a>
+													<a href="/list/city/wendeng">文登</a>
+													<a href="/list/city/wenling">温岭</a>
+													<a href="/list/city/wenzhou">温州</a>
+													<a href="/list/city/wuhai">乌海</a>
+													<a href="/list/city/wuhan"><font style='font-weight:bold;color:#000000'>武汉</font></a>
+													<a href="/list/city/wuhu">芜湖</a>
+													<a href="/list/city/wujiang">吴江</a>
+													<a href="/list/city/wulanhaote">乌兰浩特</a>
+													<a href="/list/city/wuwei">武威</a>
+													<a href="/list/city/wuxi">无锡</a>
+													<a href="/list/city/wuzhou">梧州</a>
+													<a href="/list/city/xian"><font style='font-weight:bold;color:#000000'>西安</font></a>
+													<a href="/list/city/xiangcheng">项城</a>
+													<a href="/list/city/xiangfan">襄樊</a>
+													<a href="/list/city/xianggelila">香格里拉</a>
+													<a href="/list/city/xiangshan">象山</a>
+													<a href="/list/city/xiangtan">湘潭</a>
+													<a href="/list/city/xiangxiang">湘乡</a>
+													<a href="/list/city/xianning">咸宁</a>
+													<a href="/list/city/xiantao">仙桃</a>
+													<a href="/list/city/xianyang">咸阳</a>
+													<a href="/list/city/xicang">西藏</a>
+													<a href="/list/city/xichang">西昌</a>
+													<a href="/list/city/xingtai">邢台</a>
+													<a href="/list/city/xingyi">兴义</a>
+													<a href="/list/city/xining">西宁</a>
+													<a href="/list/city/xinxiang">新乡</a>
+													<a href="/list/city/xinyang">信阳</a>
+													<a href="/list/city/xinyu">新余</a>
+													<a href="/list/city/xinzhou">忻州</a>
+													<a href="/list/city/xuancheng">宣城</a>
+													<a href="/list/city/xuchang">许昌</a>
+													<a href="/list/city/xuzhou">徐州</a>
+													<a href="/list/city/wulumuqi">乌鲁木齐</a>
+													<a href="/list/city/xiaoshan">萧山</a>
+													<a href="/list/city/xuanhua">宣化</a>
+													<a href="/list/city/xinji">辛集</a>
+													<a href="/list/city/wanzhou">万州</a>
+													<a href="/list/city/xiangyin">湘阴</a>
+													<a href="/list/city/xinghua">兴化</a>
+													<a href="/list/city/xianggang"><font style='font-weight:bold;color:#000000'>香港</font></a>
+												</div>
+											<div class="citys-9" style="display: none;">
+													<a href="/list/city/yaan">雅安</a>
+													<a href="/list/city/yakeshi">牙克石</a>
+													<a href="/list/city/yanan">延安</a>
+													<a href="/list/city/yanbian">延边</a>
+													<a href="/list/city/yancheng">盐城</a>
+													<a href="/list/city/yangjiang">阳江</a>
+													<a href="/list/city/yangquan">阳泉</a>
+													<a href="/list/city/yangzhou">扬州</a>
+													<a href="/list/city/yanji">延吉</a>
+													<a href="/list/city/yantai">烟台</a>
+													<a href="/list/city/yanzhou">兖州</a>
+													<a href="/list/city/yibin">宜宾</a>
+													<a href="/list/city/yichang">宜昌</a>
+													<a href="/list/city/yichun">宜春</a>
+													<a href="/list/city/yichun1">伊春</a>
+													<a href="/list/city/yili">伊犁</a>
+													<a href="/list/city/yinchuan">银川</a>
+													<a href="/list/city/yingkou">营口</a>
+													<a href="/list/city/yingtan">鹰潭</a>
+													<a href="/list/city/yining">伊宁</a>
+													<a href="/list/city/yiwu">义乌</a>
+													<a href="/list/city/yixing">宜兴</a>
+													<a href="/list/city/yiyang">益阳</a>
+													<a href="/list/city/yongkang">永康</a>
+													<a href="/list/city/yongzhou">永州</a>
+													<a href="/list/city/yueyang">岳阳</a>
+													<a href="/list/city/yuhuan">玉环</a>
+													<a href="/list/city/yulin1">榆林</a>
+													<a href="/list/city/yulin">玉林</a>
+													<a href="/list/city/yuncheng">运城</a>
+													<a href="/list/city/yuxi">玉溪</a>
+													<a href="/list/city/yuyao">余姚</a>
+													<a href="/list/city/zaozhuang">枣庄</a>
+													<a href="/list/city/zengcheng">增城</a>
+													<a href="/list/city/zhangjiagang">张家港</a>
+													<a href="/list/city/zhangjiajie">张家界</a>
+													<a href="/list/city/zhangjiakou">张家口</a>
+													<a href="/list/city/zhangqiu">章丘</a>
+													<a href="/list/city/zhangye">张掖</a>
+													<a href="/list/city/zhangzhou">漳州</a>
+													<a href="/list/city/zhanjiang">湛江</a>
+													<a href="/list/city/zhaodong">肇东</a>
+													<a href="/list/city/zhaoqing">肇庆</a>
+													<a href="/list/city/zhaotong">昭通</a>
+													<a href="/list/city/zhengzhou"><font style='font-weight:bold;color:#000000'>郑州</font></a>
+													<a href="/list/city/zhenjiang">镇江</a>
+													<a href="/list/city/zhongshan">中山</a>
+													<a href="/list/city/zhoukou">周口</a>
+													<a href="/list/city/zhoushan">舟山</a>
+													<a href="/list/city/zhucheng">诸城</a>
+													<a href="/list/city/zhuhai">珠海</a>
+													<a href="/list/city/zhuji">诸暨</a>
+													<a href="/list/city/zhumadian">驻马店</a>
+													<a href="/list/city/zhuzhou">株洲</a>
+													<a href="/list/city/zibo">淄博</a>
+													<a href="/list/city/zigong">自贡</a>
+													<a href="/list/city/zunyi">遵义</a>
+													<a href="/list/city/ziyang">资阳</a>
+													<a href="/list/city/zoucheng">邹城</a>
+												</div>
+									</div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div id="header_search">
+            <input class="search_text bor_radius_7" name="q" id="q" type="text" onfocus="if (value =='输入您要入住地址、商圈、关键字'){value =''}" onblur="if (value ==''){value='输入您要入住地址、商圈、关键字'}" value="输入您要入住地址、商圈、关键字" />
+            <input class="search_button" id="search_button" type="button" value="搜  索" />
+        </div>
+        <div class="Statistics">
+            已收录<font color="red"><%=@totalRentalItems%></font>各类日租房源信息，<font color="red"><%=@totalRentalSites %></font>个短租网站。 
+        </div>
+        <!--搜索区 end-->  
+        <!--<div class="JoinUs_ppImg">
+        	<a href="/LeagueRequest" target="target='_blank'"><img src="/images/JoinUs_ppImg.jpg" alt="加盟我们" title="加盟我们"/></a>
+        </div>          
+        -->
+   </div>
+</div>
