@@ -1,6 +1,7 @@
 <style type="text/css">
   .main_body {
-  margin: 0 15px;
+  margin: 0 10px;
+  background-color: #FFFFFF;
   }
 
   .main_floatLeft {
@@ -11,42 +12,210 @@
   }
 
   .main_floatRight {
-  width: 684px;
+  width: 664px;
   }
 
-  .room_title_block {
+  .section_title_block {
   background: url("/images/room_titlebg.jpg") repeat-x scroll left center transparent;
   border-bottom: 1px solid #C3C3C3;
+  border-top: 1px solid #f5f5f5;
+
   }
-  .room_title_block h1{
+  .section_title_block h1{
   float:left;
   font-size:14px;
   font-weight: bold;
   padding: 8px 8px 8px 10px;
   }
 
-  .room_title_block span{
+  .section_title_block span{
   float:right;
   padding: 8px 8px 8px 20px;
   }
 
-  ul.roomShow_list li .recommendRoom_left {
+  li .recommendRoom_left {
   float: left;
   padding-right: 5px;
   padding-top: 5px;
+  background-color: #FFFFFF;
+  position: relative;
   }
 
-  ul.roomShow_list li .recommendRoom_right {
+  li .recommendRoom_right {
   float: right;
   text-align: left;
   padding-top: 5px;
+  background-color: #FFFFFF;
   }
 
 
+  .recommendRoom_description {
+  float: left;
+  padding-right: 5px;
+  text-align: left;
+  background-color: #FFFFFF;
+  }
+
+  .recommendRoom_description_right {
+  float: right;
+  padding-right: 5px;
+  text-align: right;
+  background-color: #FFFFFF;
+  vertical-align: middle;
+  }
+
+  .room_price_pink_bold {
+  color: #ff1493;
+  font-weight: bold;
+  font-size: 1.5em;
+  }
+
+  .room_price_pink{
+  color: #ff1493;
+  }
+
+  .img_padding {
+  padding-bottom: 5px;
+  }
+
+  /*tabbed nav */
+  ul.tabbed_nav {
+  float: left;
+  padding-top: 5px;
+  width:664px;
+  background-color: #FFFFFF;
+  margin: 0px;
+  border-width: 0;
+  }
+
+  ul.tabbed_nav li {
+  float: left;
+  margin: 0px;
+  border: 1px solid #999999;
+  border-bottom-width: 0;
+  border-right-width: 0;
+  padding-top: 5px;
+  color: #999999;
+  }
+
+  ul.tabbed_nav li .last {
+  float: left;
+  margin: 0px;
+  border: 1px solid #999999;
+  border-bottom-width: 0;
+  padding-top: 5px;
+  color: #999999;
+  }
+
+  ul.tabbed_nav selected {
+  background-color: #FFFFFF;
+  color: #000000;
+  /*border-color: black;*/
+  }
+
+  ul.tabbed_nav li a {
+  display: block;
+  padding: 5px;
+  position: relative;
+  color: #999999;
+  }
+
+  ul.tabbed_nav li.selected a {
+  top: 1px;
+  background: white;
+  color: black;
+  font-weight: bold;
+  position: relative;
+  }
+  /*
+  ul.section_top_nav li.line_text a{
+  color: #999999;
+  }
+  */
+  ul.tabbed_nav li.tabbed_nav_more {
+  float:right;
+  padding: 0px;
+  border: 0;
+  }
+
+  ul.tabbed_nav li.tabbed_nav_more a {
+  display: block;
+  padding-top: 10px;
+  position: relative;
+  color: #0087D2;
+  }
+
+  ul.tabbed_nav li span{
+  color: #0087D2;
+  padding-top:8px;
+  }
+
+  .tabbed_nav_bgcolor {
+  background-color: #D9DDFB;
+  }
 
 
+  ul.tabbed_nav a:hover {
+  background: #ddf;
+  }
+
+  .tabbed_nav_content {
+  border: 1px solid black;
+  clear: both;
+  padding: 5px 5px;
+  border-width: 1px 0 0 0;
+  border-color: #999999;
+  background-color: white;
+  }
+
+  ul.roomShow_list_dotted li {
+  {
+  border-bottom: 1px dotted #DDDDDD;
+  padding: 5px 0;
+  }
+
+  .label {
+  font-weight:bold;
+  color:black;
+  }
+
+  .green_text {
+  color: green;
+  }
+
+  .recommendRoom_description h1 a {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  height: 17px;
+  overflow: hidden;
+  padding-bottom: 5px;
+  }
+
+  /*  .recommendRoom_description span {
+  color: #999999;
+  }
+  */
 </style>
 
+<script language="javascript">
+  $(".recommendRoom_left").live('mouseover',function(){
+  $(this).css("backgroundColor","#f4f4f4");
+  });
+
+  $(".recommendRoom_left").live('mouseout',function(){
+  $(this).css("backgroundColor","#fff");
+  });
+
+  $(".recommendRoom_right").live('mouseover',function(){
+  $(this).css("backgroundColor","#f4f4f4");
+  });
+
+  $(".recommendRoom_right").live('mouseout',function(){
+  $(this).css("backgroundColor","#fff");
+  });
+
+</script>
 <% captions=["掀起一帘幽梦","燕郊温馨公寓","亚运村欢聚一堂","湖光山色两相宜","海豚湾一居","牡丹园五道口"]
    prices =["￥280","￥250","￥270","￥320","￥350","￥220"]
    sources=["商家:爱日租","商家:蚂蚁网","商家:游天下","商家:住我那","商家:途家","商家:美租网"]
@@ -56,17 +225,15 @@
 <div class="main_body">
   <div class="float_left main_floatLeft margin_bottom_15">
 
-      <div class="room_title_block">
-        <h1>热门去处</h1>
-        <span>
-          <a href="#">
+      <div class="section_title_block">
+            <h1>热门去处</h1>
+        <span class="float_right">
+          <a href="#" style="padding: 8px 8px 8px 20px;">
             更多>>
           </a>
         </span>
-        <div = class="clear"></div>
+        <div class="clear"></div>
       </div>
-
-      <div style="height:0px;"></div>
 
       <ul class="roomShow_list">
 
@@ -82,12 +249,12 @@ while i < captions.length
               <img src="/images/<%=images[i]%>.png" alt="<%=captions[i]%>" title="<%=captions[i]%>" width="145" height="92"/>
             </a>
 
-          <div class="room_Address">
+          <div>
             <span class="TColor_535353" title=""
               <%=captions[i]%>">
-              <%=captions[i]%>(<font color='red'>
+              <%=captions[i]%>(<span class="room_price_pink">
                 <%=prices[i]%>
-              </font>)
+              </span>)
             </span>
           </div>
 
@@ -102,16 +269,17 @@ while i < captions.length
           i += 1
         %>
             <div class="recommendRoom_right">
+              
                 <a href="/ShowHouse/AAA83BF2B1D8CFB3" target="_blank">
                   <img src="/images/<%=images[i]%>.png" alt="<%=captions[i]%>" title="<%=captions[i]%>" width="145" height="92"/>
                 </a>
 
-              <div class="room_Address">
+              <div>
                 <span class="TColor_535353" title=""
                   <%=captions[i]%>">
-                  <%=captions[i]%>(<font color='red'>
+                  <%=captions[i]%>(<span class="room_price_pink">
                     <%=prices[i]%>
-                  </font>)
+                  </span>)
                 </span>
               </div>
 
@@ -122,7 +290,8 @@ while i < captions.length
               <div class="clear"></div>
             </div>
 
-          <div class="clear"></div>
+            <div class="clear"></div>
+       
           </li>
         <%
         i +=1
@@ -132,7 +301,141 @@ while i < captions.length
       </ul>
   </div>
 
-  <div class="float_right main_floatRight"></div>
+  <div class="float_right main_floatRight">
+    <div class="img_padding">
+    <img src="images/mobile.png" width="664" height="70"></img>
+    </div>
+    <div class="img_padding">
+      <img src="images/househunt.png" width="664" height="70"></img>
+    </div>
+    <div class="img_padding">
+      <img src="images/logo_big.png" width="664" height="145"></img>
+    </div>
+    
+    <!--info section -->
+    <div class="tabbed_nav_bgcolor">
+      <ul class="tabbed_nav">
+        <li class="selected">
+          <a href="#">
+            <h1>热门房间</h1>
+          </a>
+        </li>
+        <li>
+          <a href="#">特价房间</a>
+        </li>
+        <li>
+          <a href="#">特色去处</a>
+        </li>
+        <li class="last">
+          <a href="#">多人租房</a>
+        </li>
+        <li  class="tabbed_nav_more">
+          <a href="#">更多热门攻略>></a>
+        </li>
+      </ul>
+      
+      <div class="clear"></div>
+<%
+  captions2=["北京最便宜的旅馆到普通双人间","临近什刹海, 四合院复式单间","沿海居所高层海景房三期08号","三亚椰海风情居-12楼, 豪华大圆床"]
+  prices2 =["￥115","￥175","￥580","￥308"]
+  businessSourceLabel="商家"
+  houseTypeLabel="房屋类型"
+  availResidentLabel="可住人数"
+  sources2=["游天下","爱日租","途家","蚂蚁网"]
+  images2 =["lovedream","warmapt","asiagathering","mountlakes","coastal","flowergarden"]
+  houseTypes=["公寓","公寓","公寓","家庭旅馆"]
+  availResident=["3","3","3","3"]
+  peopleUnit="人"
+  addresses=["北京市朝阳区北苑来春园小区","北京朝阳区建国门外大街建华南路","中国海南省三亚市三亚湾蓝色海岸","海南省三亚市市辖区大东海花园小区"]
+  nightUnit= "每晚"
+  %>
+  <div class="tabbed_nav_content">
+        <ul class="roomShow_list">
+<% 
+i = 0
+while i < captions2.length
+%>
+  
+<li>
+
+  <div class="recommendRoom_img">
+
+    <a href="/ShowHouse/AAA83BF2B1D8CFB3" target="_blank">
+      <img src="/images/<%=images2[i]%>.png" alt="<%=captions2[i]%>" title="<%=captions2[i]%>" width="116" height="72"/>
+    </a>
+  </div>
+
+    <div class="recommendRoom_description">
+      <ul>
+        <li  style="display: list-item;padding:0 0 5px 0;border:0;" >
+        <h1>
+        <a title="<%=captions2[i]%>" href="#"><%=captions2[i]%>
+        </a>          
+      </h1>
+        </li>
+        <li  style="display: list-item;padding:0 0 2px 0;border:0;color: #999999">
+      <span>
+        <%=addresses[i]%>
+      </span>
+        </li>
+
+        <li style="display: list-item; width:100px;float: left;border:0;">
+
+          <span class="label">
+            <%=businessSourceLabel%>:
+          </span>
+          <span class="green_text">
+            <%=sources2[i]%>
+          </span>
+          <div class="clear"></div>
+        </li>
+
+        <li style="display: list-item; width:112px;float: left;border:0;">
+          <span class="label">
+            <%=houseTypeLabel%>:
+          </span>
+          <span class="green_text">
+            <%=houseTypes[i]%>
+          </span>
+          <div class="clear"></div>
+        </li>
+
+        <li style="display: list-item; width:112px;float: left;border:0;">
+          <span class="label">
+            <%=availResidentLabel%>:
+            </span>
+          <span class="green_text">
+            <%=availResident[i]%><%=peopleUnit%>
+          </span>
+          <div class="clear"></div>
+        </li>
+
+        <div class="clear"></div>
+      </ul>
+    </div>
+
+  <div class="recommendRoom_description_right">
+    <div style="color: #999999;padding-top:15px;">
+      <%=nightUnit%>
+    </div>
+    <div class="room_price_pink_bold">
+      <%=prices2[i]%>
+    </div>
+    <div class="clear"></div>
+  </div>
+    <div class="clear"></div>
+</li>
+  <%
+  i += 1
+  end
+  %>
+        </ul>
+      </div>
+
+
+    </div>
+    
+  </div>
     
   <div class="clear"></div>
 </div>
