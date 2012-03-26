@@ -64,7 +64,7 @@ textarea, input[type="text"]{
 .bg_div{ margin:0 auto; width:1000px;}/* 背景*/
 .bg_div_998{ width:998px;}
 .bg_Public{ background-color:#fff; border:1px solid #C3C3C3;}
-.box_shadow{ box-shadow:2px 2px 5px rgba(0,0,0,0.1); *+border:1px solid #C3C3C3; _border:1px solid #C3C3C3;}
+.box_shadow{ box-shadow:2px 2px 5px rgba(0,0,0,0.1); border:1px solid #C3C3C3; _border:1px solid #C3C3C3;}
 
 
 /*字体颜色*/
