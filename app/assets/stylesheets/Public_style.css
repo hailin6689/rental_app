@@ -126,7 +126,7 @@ a.red,a.red:visited{ color:#f00;}
 .v3_button {
     background: url("../images/v3_button_bgs_002.png") repeat-x scroll 0 0 transparent;
     border: 1px solid #85AA40;
-	*+border:0;
+	border:0;
 	_border:0;
     border-radius: 7px 7px 7px 7px;
     color: #FFFFFF !important;
