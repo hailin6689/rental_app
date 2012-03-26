@@ -48,21 +48,6 @@
   background-color: #FFFFFF;
   }
 
-  li .place_left {
-  float: left;
-  padding-right: 5px;
-  padding-top: 5px;
-  background-color: #FFFFFF;
-  position: relative;
-  }
-
-  li .place_right {
-  float: right;
-  text-align: left;
-  padding-top: 5px;
-  background-color: #FFFFFF;
-  }
-
 
   .recommendRoom_description {
   float: left;
@@ -187,15 +172,11 @@
   background-color: white;
   }
 
-  .place_list_borderless li
+  ul.place_list_borderless li
   {
   padding: 5px 0;
   }
 
-  ul.place_list_borderless li .place_img {
-  float: left;
-  padding-right: 8px;
-  }
 
   ul.roomShow_list_dotted li {
   {
@@ -726,20 +707,24 @@ while i < captions2.length
 
       %>
       <div class="tabbed_nav_content">
-        <ul class="place_list_borderless">
+        <ul xlas>
           <% 
 n = 0
-while n < news_source.length
+while n < ( news_source.length - 4 )
 %>
-<li>
+<li style="display:list-item;padding:0 5px 2px 0;border:0;width:280px;float:left;">
 <!--            <div style="float:left;width:300px;padding: 0;border:0;">-->
               <!-- -->
-  <div class="place_left">
-              <div class="place_img">
+        <table>
+          <tr>
+<!--  <div style="float:left;border:0;padding-top:0;padding-right:8px;">-->
+            <td valign="top" style="padding-top:0;">
+              <div>
       <img src="/images/<%=news_image[n]%>.png" width="74" height="74"/>
               </div>
+            </td>
                 
-                <div class="recommendRoom_description" style="width:200px;">
+                <td style="float:right;padding:0 5px 0 5px;border:0;width:200px;">
                   <ul>
                     <li  style="display: list-item;padding:0 0 2px 0;border:0;color: #999999">
                       <span style="width: 20px;">
@@ -748,100 +733,42 @@ while n < news_source.length
                       <span>
                         <%=news_source[n]%>
                       </span>
-                      <div class="clear"></div>
                     </li>
 
-                    <li  style="display: list-item;padding:3px 0 0 0;border:0;color: #0087D2;font-size:15px;" >
+                    <li  style="display: list-item;padding:0 0 5px 0;border:0;color: #0087D2;font-size:15px;" >
                       <h1 style="font-size:15px;">
                         <%=news_digest[n]%>
                       </h1>
                     </li>
 
-                    <li style="display: list-item; float: left;border:0;padding-top:5px;">
+                    <li style="display: list-item; float: left;border:0;">
                       <span class="label">
                         <%=news_desc[n]%>
                       </span>
                       <div class="clear"></div>
                     </li>
 
-                    <li style="display: list-item; float: left;padding:0;border:0 0 3px 0;color:#999999;width:100%;">
+                    <li style="display: list-item; float: left;border:0;color:#999999;width:100%;">
                       <span class="label">
                         <%=fromLabel%>:
                       </span>
                       <span>
                         <%=news_time[n]%>
                       </span>
-                      <div class="clear"></div>
                     </li>
 
                     <div class="clear"></div>
                   </ul>
+                  
                   <div class="clear"></div>
-
-                </div>
-<!--                
+                </td>
+                
       </tr>
       </table>
--->
+
                 <div class="clear"></div>
-              </div>
-<%
-  n += 1
-  %>
-  <div class="place_right">
-    <div class="place_img">
-      <img src="/images/<%=news_image[n]%>.png" width="74" height="74"/>
-    </div>
-
-    <div class="recommendRoom_description" style="width:200px;">
-      <ul>
-        <li  style="display: list-item;padding:0 0 2px 0;border:0;color: #999999">
-          <span style="width: 20px;">
-            <%=fromLabel%>
-          </span>
-          <span>
-            <%=news_source[n]%>
-          </span>
-          <div class="clear"></div>
-        </li>
-
-        <li  style="display: list-item;padding:3px 0 0 0;border:0;color: #0087D2;font-size:15px;" >
-          <h1 style="font-size:15px;">
-            <%=news_digest[n]%>
-          </h1>
-        </li>
-
-        <li style="display: list-item; float: left;border:0;padding-top:5px;">
-          <span class="label">
-            <%=news_desc[n]%>
-          </span>
-          <div class="clear"></div>
-        </li>
-
-        <li style="display: list-item; float: left;padding:0;border:0 0 3px 0;color:#999999;width:100%;">
-          <span class="label">
-            <%=fromLabel%>:
-          </span>
-          <span>
-            <%=news_time[n]%>
-          </span>
-          <div class="clear"></div>
-        </li>
-
-        <div class="clear"></div>
-      </ul>
-      <div class="clear"></div>
-
-    </div>
-    <!--                
-      </tr>
-      </table>
--->
-    <div class="clear"></div>
-  </div>
-
-  <div class="clear"></div>
-</li>
+<!--              </div>-->
+            </li>
           <%
   n += 1
           end
