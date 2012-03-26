@@ -330,7 +330,6 @@ ul.header_pp li.pp_Img03{
     line-height: 24px;
 	padding: 6px 0 4px 10px;
     margin-left:10px;
-	*+margin-left:5px;
 	_margin-left:5px;
 	}
 
@@ -425,7 +424,7 @@ ul.header_pp li.pp_Img03{
 
 ul.content_nav{ 
 	background: url("../images/roomShow_img/room_titleBg.jpg") repeat-x scroll 0 0 transparent;
-	padding:5px 13px 0; *+height:31px; _height:31px;  border-bottom: 1px solid #D0D0D0;}
+	padding:5px 13px 0; height:31px; _height:31px;  border-bottom: 1px solid #D0D0D0;}
 ul.content_nav li{
 	background: none repeat scroll 0 0 #E4E4E4;
     border: 1px solid #C3C3C3;
@@ -556,12 +555,12 @@ a.roomVerify_position:link,a.roomVerify_position:visited{
 }
 .mainbody p{
 	position:static;
-	+position:absolute;
+	position:absolute;
 	top:50%
 }
 .mainbody p img {
 	position:static;
-	+position:relative;
+	position:relative;
 	top:-50%;left:-50%;
 	text-align:center;
 	margin:0 auto;

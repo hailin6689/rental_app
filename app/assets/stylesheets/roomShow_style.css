@@ -171,8 +171,8 @@ ul.roomTypeDetailed_Service li.submit_phone{
 ul.roomShow_list li{
 	border-bottom:1px solid #ddd;
 	padding:5px 0;
-	*+height:100%;
-	*+overflow:hidden;
+	height:100%;
+	overflow:hidden;
 	}
 ul.roomShow_list li.last{
 	border:0;}

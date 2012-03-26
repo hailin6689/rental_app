@@ -24,8 +24,8 @@
 	}
 .nav_block .webNav li,.nav_block .Filter_type li{
 	padding:5px;
-	*+height:100%;
-	*+overflow:hidden;
+	height:100%;
+	overflow:hidden;
 	_height:100%;
 	_overflow:hidden;
 	}
@@ -252,7 +252,7 @@ ul.tab_view_bottom li.list_view a.active_view { background-position: -139px -29p
 	border-left:1px solid #C3C3C3;
 	width:979px;
 
-	*+height:100%;
+	height:100%;
 	_height:100%;
 	}
 .room_list{
@@ -391,12 +391,12 @@ a:link { color: #0087D2; text-decoration: none;}
 #slider_user_min, #slider_user_max { background: none repeat scroll 0 0 #6E6E6A; border-radius: 3px 3px 3px 3px; color: #FFFFFF; font-size: 14px; font-weight: bold; height: auto; padding: 1px 3px;}
 #price_range,.price_leftBlock,.price_rightBlock,#price_min,#price_max{
 	float:left;}
-#price_range {  width:350px; height:16px; margin-top:8px; margin-right:14px; margin-left: 6px; *+margin-left: 3px; _margin-left: 3px;}
+#price_range {  width:350px; height:16px; margin-top:8px; margin-right:14px; margin-left: 6px; margin-left: 3px; _margin-left: 3px;}
 .price_leftBlock{
 	width:56px;
 	margin-left:20px;
-	*+margin-left:10px;
-	_margin-left:10px;
+	/*margin-left:10px;
+	_margin-left:10px;*/
 	}
 .price_rightBlock{
 	width:80px;
@@ -422,7 +422,7 @@ a:link { color: #0087D2; text-decoration: none;}
 	margin:0 10px;
 	border:1px solid #c3c3c3;
 	}
-.S_S_list_body{ border:1px solid #BCBCBC; border-top:3px solid #bcbcbc; padding:10px; *+height:100%; *+overflow:hidden;}
+.S_S_list_body{ border:1px solid #BCBCBC; border-top:3px solid #bcbcbc; padding:10px; height:100%; overflow:hidden;}
 .S_S_list_left,.S_S_list_middle{ float:left;}
 .S_S_list_left{ width:115px; margin-right:15px;}
 .S_S_list_left .room_imgBgBlock{ box-shadow:0 1px 4px 1px #bbb; border:1px solid #ccc;  padding:3px; background-color:#fff; position:relative;}
@@ -475,11 +475,11 @@ a:link { color: #0087D2; text-decoration: none;}
     padding-right: 14px;
     text-align: right;
 	}
-.SSL_Compare{ float:left; margin:17px 0 0 0; *+width:55px;}	
+.SSL_Compare{ float:left; margin:17px 0 0 0; width:55px;}	
 .SSL_Compare label{ display:block; width:50px; margin:0 auto;}
 
 .S_S_list_right a.SSL_buttonBg,.S_S_list_right a.SSL_buttonBg:visited{
-	*+width:60px;
+	width:60px;
 	float:right;
 	color:#333;
 	margin:10px 0 0 0;
