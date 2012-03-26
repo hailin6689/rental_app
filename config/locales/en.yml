@@ -2,6 +2,6 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  title: "Condo, Apartment, Hotel and Single-Family Home Rental"
-  meta_keywords: "House Rental,House Rental Guides, House Rental Information, House Rental Search/Advice"
-  meta_description: "House Rental is the first vertical search portal for house rentals, including single-family homes, condo, apartment and hotel rooms/suites."
+  title: Condo, Apartment, Hotel and Single-Family Home Rental
+  meta_keywords: House Rental,House Rental Guides, House Rental Information, House Rental Search/Advice
+  meta_description: House Rental is the first vertical search portal for house rentals, including single-family homes, condo, apartment and hotel rooms/suites.
