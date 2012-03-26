@@ -1,8 +1,1 @@
-﻿# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-#chartset=utf-8
-
-zh:
-  title: "短租房 日租房 酒店公寓 短租公寓 公寓网址 搜短租网网站"
-  meta_keywords: "短租,日租,短租房,日租房,家庭公寓,酒店公寓,客栈,日租公寓,短租公寓,假日酒店,宾馆预订,短租搜索,日租搜索,短租房导航,日租房导航,短租房网站导航,短租房网址之家,短租搜索大全"
-  meta_description: "搜短租网是首家日租房/短租房垂直搜索专业网站，汇集国内短租,日租,短租房,日租房,家庭公寓,酒店公寓,客栈,日租公寓,短租公寓,假日酒店,宾馆预订,短租搜索,日租搜索,短租房网站,短租房导航,日租房导航,短租房网站导航,短租房网址之家,短租搜索大全，找短租房一站到位；搜短租网,一网网尽国内短租房/日租房房源"
+# Sample localization file for English. Add more files in this directory for other locales. # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points. #chartset=utf-8  zh:   title: "短租房 日租房 酒店公寓 短租公寓 公寓网址 搜短租网网站"   meta_keywords: "短租,日租,短租房,日租房,家庭公寓,酒店公寓,客栈,日租公寓,短租公寓,假日酒店,宾馆预订,短租搜索,日租搜索,短租房导航,日租房导航,短租房网站导航,短租房网址之家,短租搜索大全"   meta_description: "搜短租网是首家日租房/短租房垂直搜索专业网站，汇集国内短租,日租,短租房,日租房,家庭公寓,酒店公寓,客栈,日租公寓,短租公寓,假日酒店,宾馆预订,短租搜索,日租搜索,短租房网站,短租房导航,日租房导航,短租房网站导航,短租房网址之家,短租搜索大全，找短租房一站到位；搜短租网,一网网尽国内短租房/日租房房源" 
