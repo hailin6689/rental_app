@@ -1,5 +1,5 @@
-require 'openssl'
-require 'digest/sha2'
+#require 'openssl'
+#require 'digest/sha2'
 
 module ApplicationHelper
 
