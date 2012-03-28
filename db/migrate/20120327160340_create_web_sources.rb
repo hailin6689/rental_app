@@ -12,7 +12,7 @@ class CreateWebSources < ActiveRecord::Migration
       t.string :contact_400, :limit=>20
       t.string :mobile, :limit=>45
       t.string :address, :limit=>100
-      t.timestamps
+      #t.timestamps
       t.string :qq, :limit=>45
       t.string :msn, :limit=>45
       t.string :email, :limit=>100

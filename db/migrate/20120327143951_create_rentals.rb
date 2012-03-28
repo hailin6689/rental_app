@@ -26,7 +26,7 @@ class CreateRentals < ActiveRecord::Migration
       t.string :images, :limit=>200
       t.string :images_key, :limit=>100
       t.integer :flag
-      t.timestamps
+      #t.timestamps
       t.float :lat
       t.float :lng
       t.float :bdlat

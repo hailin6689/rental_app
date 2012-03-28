@@ -7,7 +7,7 @@ development:
   adapter: postgresql
   database: souduanzu
   username: changsha
-  password: hifly@2012
+  password: hifly2012
   encoding: utf8
   pool: 5
   timeout: 5000
@@ -19,7 +19,7 @@ test:
   adapter: postgresql
   database: souduanzu
   username: changsha
-  password: hifly@2012
+  password: hifly2012
   encoding: utf8
   pool: 5
   timeout: 5000
@@ -28,7 +28,7 @@ production:
   adapter: postgresql
   database: souduanzu
   username: changsha
-  password: hifly@2012
+  password: hifly2012
   encoding: utf8
   pool: 5
   timeout: 5000
