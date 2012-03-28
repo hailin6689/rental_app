@@ -300,23 +300,17 @@ images =["lovedream","warmapt","asiagathering","mountlakes","coastal","flowergar
       <ul class="roomShow_list">
 
 <% 
-sourceLabel ="商家: "
-
 n=0
 while n < @houses.size
 house=@houses[n]
 
-image_path = "http://img.souduanzu.com/#{house['source_id']}/medium/#{house['images_key']}"
-if  !image_path.end_with?(".jpg")
-    image_path =""
-end
 %>
           <li style="background: none repeat scroll 0% 0% rgb(255,255,255);">
           
           <div class="recommendRoom_left" style="width:145px;">
 
             <a href="/ShowHouse/AAA83BF2B1D8CFB3" target="_blank">
-              <img src="<%=image_path%>" alt="<%=house["title"]%>" title="<%=house["title"]%>" width="145" height="92"/>
+              <img src="<%=full_image_path(house['source_id'],house['images_key'])%>" alt="<%=house["title"]%>" title="<%=house["title"]%>" width="145" height="92"/>
             </a>
 
           <div class="TColor_535353" title="<%=house["title"]%>" style="width:145px;">
@@ -324,7 +318,7 @@ end
           </div>
 
           <span class="TColor_999">
-            <%=sourceLabel%><%=@sourceHash[house["source_id"]] %>
+            <%=t(:source_label)%><%=source_name(house["source_id"]) %>
           </span>
 
           <div class="clear"></div>
@@ -333,15 +327,11 @@ end
 <%
 n += 1 
 house = @houses[n]
-image_path = "http://img.souduanzu.com/#{house['source_id']}/medium/#{house['images_key']}"
-if  !image_path.end_with?(".jpg")
-    image_path =""
-end
 %>
             <div class="recommendRoom_right">
               
                 <a href="/ShowHouse/AAA83BF2B1D8CFB3" target="_blank">
-                  <img src="<%=image_path%>" alt="<%=house["title"]%>" title="<%=house["title"]%>" width="145" height="92"/>
+                  <img src="<%=full_image_path(house['source_id'],house['images_key'])%>" alt="<%=house["title"]%>" title="<%=house["title"]%>" width="145" height="92"/>
                 </a>
 
               <div class="TColor_535353" title="<%=house["title"]%>" style="width:145px;">
@@ -350,7 +340,7 @@ end
               </div>
 
               <span class="TColor_999">
-                <%=sourceLabel%><%=@sourceHash[house["source_id"]] %>
+                <%=t(:source_label)%><%=source_name(house["source_id"]) %>
               </span>
 
               <div class="clear"></div>
@@ -467,8 +457,9 @@ domain_path.slice!("/")
         data: d,
     }],
     {
+        colors: ["#FF6600"],
         series: {
-            points: { show: true },
+            points: { show: true,fill:true,fillColor: "#ff3300", },
             lines: { show: true }
         },
         xaxis: {
@@ -512,7 +503,9 @@ totalNites = 2560
 
   <div class="float_right main_floatRight">
     <div class="img_padding">
-    <img src="images/mobile.png" width="664" height="70"></img>
+    <a href="http://www.souduanzu.com/app" >
+    <img src="images/mobile.png" alt="手机客户端 - 免费下载" title="手机客户端 - 免费下载"width="664" height="70"></img>
+    </a>
     </div>
     <div class="img_padding">
       <img src="images/househunt.png" width="664" height="70"></img>

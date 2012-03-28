@@ -21,15 +21,15 @@ class RentalsController < ApplicationController
 	 n += 1
 	 end
 
-	 logger.debug "after house selection"
+	 #logger.debug "after house selection"
 
 	 # we may want to cache the web_sources
-	 sources = WebSource.select("id,name")
-	 @sourceHash = Hash.new
-	 sources.each do |source|
-		@sourceHash[source["id"]] = source["name"]
-	 end
-	 logger.debug "after hash"
+	 #sources = WebSource.select("id,name")
+	 #@sourceHash = Hash.new
+	 #sources.each do |source|
+	#	@sourceHash[source["id"]] = source["name"]
+	 #end
+	 #logger.debug "after hash"
   end
 
   def show
