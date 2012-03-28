@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Untitled Page</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="jquery.flot.js"></script>
+</head>
+<body>
+
+      <script type="text/javascript">
+
+function suffixFormatter(val, axis) {
+/*    if (val > 1000000)
+      return (val / 1000000).toFixed(axis.tickDecimals) + " MB";
+    else if (val > 1000)
+      return (val / 1000).toFixed(axis.tickDecimals) + " kB";
+    else
+      return val.toFixed(axis.tickDecimals) + " B";
+*/
+    if (val > 12)
+        return (val.toFixed(axis.tickDecimals) - 12) + "月";
+    else
+        return val.toFixed(axis.tickDecimals) + "月";
+  }
+      $(document).ready(function() {
+
+      var d2 = [[10, 3], [11, 8], [12, 5], [13, 13]];
+
+
+      $.plot($("#stats_chart"), [
+      {
+          data: d2
+       }],
+       {
+       series: {
+          points: { show: true },
+          lines: { show: true }
+          },
+      xaxis: {
+          tickDecimals:0,
+          minTickSize: 1,
+          tickFormatter: suffixFormatter
+          }
+      }
+      );
+
+      });
+
+    
+    </script>
+    <div style="float: left; padding: 15px 0 0 8px;">
+
+      <div id="stats_chart" style="height: 300px;width: 325px;"></div>
+    </div>
+</body>
+</html>

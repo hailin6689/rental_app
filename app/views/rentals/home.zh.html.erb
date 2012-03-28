@@ -18,7 +18,7 @@
   .section_title_block {
   background: url("/images/room_titlebg.jpg") repeat-x scroll left center transparent;
   border-bottom: 1px solid #C3C3C3;
-  border-top: 1px solid #f5f5f5;
+  border-top: 1px solid #f0f0f0;
 
   }
   .section_title_block h1{
@@ -276,11 +276,12 @@
   });
 
 </script>
-<% captions=["掀起一帘幽梦","燕郊温馨公寓","亚运村欢聚一堂","湖光山色两相宜","海豚湾一居","牡丹园五道口"]
-   prices =["￥280","￥250","￥270","￥320","￥350","￥220"]
-   sources=["商家:爱日租","商家:蚂蚁网","商家:游天下","商家:住我那","商家:途家","商家:美租网"]
-  images =["lovedream","warmapt","asiagathering","mountlakes","coastal","flowergarden"]
-%>
+<!--
+captions=["掀起一帘幽梦掀起一帘幽梦掀起一帘幽梦掀起一帘幽梦","燕郊温馨公寓","亚运村欢聚一堂","湖光山色两相宜","海豚湾一居","牡丹园五道口"]
+prices =["￥280","￥250","￥270","￥320","￥350","￥220"]
+sources=["商家:爱日租","商家:蚂蚁网","商家:游天下","商家:住我那","商家:途家","商家:美租网"]
+images =["lovedream","warmapt","asiagathering","mountlakes","coastal","flowergarden"]
+-->
 
 <div class="main_body">
   <div class="float_left main_floatLeft margin_bottom_15">
@@ -298,54 +299,58 @@
 
       <ul class="roomShow_list">
 
-        <% 
-i = 0
-while i < captions.length
+<% 
+sourceLabel ="商家: "
+
+n=0
+while n < @houses.size
+house=@houses[n]
+
+image_path = "http://img.souduanzu.com/#{house['source_id']}/medium/#{house['images_key']}"
+if  !image_path.end_with?(".jpg")
+    image_path =""
+end
 %>
           <li style="background: none repeat scroll 0% 0% rgb(255,255,255);">
-            
-          <div class="recommendRoom_left">
+          
+          <div class="recommendRoom_left" style="width:145px;">
 
             <a href="/ShowHouse/AAA83BF2B1D8CFB3" target="_blank">
-              <img src="/images/<%=images[i]%>.png" alt="<%=captions[i]%>" title="<%=captions[i]%>" width="145" height="92"/>
+              <img src="<%=image_path%>" alt="<%=house["title"]%>" title="<%=house["title"]%>" width="145" height="92"/>
             </a>
 
-          <div>
-            <span class="TColor_535353" title=""
-              <%=captions[i]%>">
-              <%=captions[i]%>(<span class="room_price_pink">
-                <%=prices[i]%>
-              </span>)
-            </span>
+          <div class="TColor_535353" title="<%=house["title"]%>" style="width:145px;">
+              <%=house["title"]%>(<span class="room_price_pink">￥<%=house["price_day"]%></span>)            
           </div>
 
           <span class="TColor_999">
-            <%=sources[i]%>
+            <%=sourceLabel%><%=@sourceHash[house["source_id"]] %>
           </span>
 
           <div class="clear"></div>
         </div>
 
-        <% 
-          i += 1
-        %>
+<%
+n += 1 
+house = @houses[n]
+image_path = "http://img.souduanzu.com/#{house['source_id']}/medium/#{house['images_key']}"
+if  !image_path.end_with?(".jpg")
+    image_path =""
+end
+%>
             <div class="recommendRoom_right">
               
                 <a href="/ShowHouse/AAA83BF2B1D8CFB3" target="_blank">
-                  <img src="/images/<%=images[i]%>.png" alt="<%=captions[i]%>" title="<%=captions[i]%>" width="145" height="92"/>
+                  <img src="<%=image_path%>" alt="<%=house["title"]%>" title="<%=house["title"]%>" width="145" height="92"/>
                 </a>
 
-              <div>
-                <span class="TColor_535353" title=""
-                  <%=captions[i]%>">
-                  <%=captions[i]%>(<span class="room_price_pink">
-                    <%=prices[i]%>
-                  </span>)
-                </span>
+              <div class="TColor_535353" title="<%=house["title"]%>" style="width:145px;">
+                  <%=house["title"]%>(<span class="room_price_pink">￥<%=house["price_day"]%>
+                  </span>)                
               </div>
 
               <span class="TColor_999">
-                <%=sources[i]%>
+                <%=sourceLabel%><%=@sourceHash[house["source_id"]] %>
               </span>
 
               <div class="clear"></div>
@@ -355,7 +360,7 @@ while i < captions.length
        
           </li>
         <%
-        i +=1
+        n += 1
         end
         %>        
       </ul>
@@ -371,10 +376,8 @@ while i < captions.length
       </span>
       <div class="clear"></div>
     </div>
-    
-    <ul class="roomShow_list">
-<% 
-brandImg = ["youtx","airizu","mayi","tujia","meizu","lezuke","aizuke","mango"]
+<!--    
+brandImg = ["youtx","airizu","mayi","tujia","meizu","lezuke","aizuke","qmango"]
 brandCaption = ["游天下搜房网棋下网站-短租房","人在旅途, 爱在日租","寻找旅行中的家","一家高品质度假公寓在线平台","高性价比和特色短租房的交易平台","为旅游, 出差的您提供全面","专注于短租日租房在线交易平台","领先的经济类酒店在线预订平台"]
 brandDesc = ["面向全国超过300个城市短租公寓等在线预顶服务平台","爱日租网站提供100%验证短租房在线预顶服务","蚂蚁网是赶集棋下网站, 是超便宜, 最可信, 有保障的在线交易平台","途家网与携程网建立战略合作伙伴关系, 实力雄厚, 值得信赖","查找并预订, 租赁全国各地, 不同类型, 高性价比短租房","在乐租客, 您将拥有全新的最棒的租房体验! 快来加入乐租客","你也以低于酒店的价格享受家一般的居住环境","芒果网棋下专门从事经济类酒店预订的电子商务
   B2C网站"]
@@ -382,13 +385,22 @@ brandLink = ["www.youtx.com","www.airizu.com","www.mayi.com","www.tujia.com","ww
   
 n = 0
 while n < brandImg.length
+-->
+
+    <ul class="roomShow_list">
+<% 
+n = 0
+@brands.each do |brand|
+domain_path = brand['url']
+domain_path.slice!("http://")
+domain_path.slice!("/")
 %>
 
       <li>
         <div class="recommendRoom_img">
 
-          <a href="/ShowHouse/AAA83BF2B1D8CFB3" target="_blank">
-            <img src="/images/<%=brandImg[n]%>.png" alt="<%=brandCaption[n]%>" title="<%=brandCaption[n]%>" width="64" height="64"/>
+          <a href="<%=brand['url']%>" target="_blank">
+            <img src="/images/<%=brand['logo']%>" alt="<%=brand['title']%>" title="<%=brand['title']%>" width="64" height="64"/>
           </a>
           <div class="clear"></div>
         </div>
@@ -397,19 +409,19 @@ while n < brandImg.length
           <ul>
             <li style="display: list-item; padding: 0 0 5px 0; border:0;font-weight:bold; color: #0087D2">
             <h1>
-                <%=brandCaption[n]%>               
+                <%=brand['title']%>               
               </h1>
             </li>
             <li style="display: list-item; padding: 0 0 2px 0; border:0;">
               <div style="color: #999999; font-size:12px;overflow:auto;">
-                <%=brandDesc[n]%>
+                <%=brand['digest']%>
               </div>
               <div class="clear"></div>
             </li>
 
             <li style="display: list-item;border:0;">
-              <a href="<%=brandLink[n]%>" style="color: green">
-                <%=brandLink[n]%>
+              <a href="<%=brand['url']%>" style="color: green">
+                <%=domain_path%>
               </a>
             </li>
 
@@ -439,12 +451,59 @@ while n < brandImg.length
       <div class="clear"></div>      
     </div>
 
+<script language="javascript" type="text/javascript">
+    function suffixFormatter(val, axis) {
+        if (val > 12)
+            return (val.toFixed(axis.tickDecimals) - 12) + "月";
+        else
+            return val.toFixed(axis.tickDecimals) + "月";
+    }
+
+  function plot_chat() {
+
+  var d = [[10, 5000], [11, 4900], [12, 5100], [13, 5200],[14,5300]];
+    $.plot($("#stats_chart"), 
+    [{
+        data: d,
+    }],
+    {
+        series: {
+            points: { show: true },
+            lines: { show: true }
+        },
+        xaxis: {
+          tickDecimals:0,
+          minTickSize: 1,
+          tickFormatter: suffixFormatter
+        }
+   }
+  );
+  }
+
+</script>
+
     <div style="float: left; padding: 15px 0 0 8px;">
 
+      <div id="stats_chart" style="height:170px; width:225px;">
+      </div>
+<!--      
       <a href="/ShowHouse/AAA83BF2B1D8CFB3" target="_blank">
         <img src="/images/stats_pek.png" width="224" height="244"/>
       </a>
+-->         
       <div class="clear"></div>
+<%
+  totalHouses = 583
+totalNites = 2560
+  %>
+      <div style="color:#999999;padding-left:10px;padding-top:30px;">
+        <p>根据搜短租统计, 北京本月:</p>
+        <p>新增日租房源 <span style="color: red; font-weight:bold;"><%=totalHouses%>套</span></p>
+        <p>租出 <span style="color: red; font-weight:bold;">
+          <%=totalNites%>晚
+        </span>
+      </p>
+      </div>
     </div>
 
     <!--短租统计 end -->
