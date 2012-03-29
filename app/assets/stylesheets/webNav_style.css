@@ -1,0 +1,214 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	background:url("../images/webNav_img/webNav_bg.jpg") repeat-x center top;
+	}
+.web_Header_logo,.web_Header_search,.header_navLink{
+	float:left;}
+.web_Header_logo{
+	width:220px;
+	margin-top:25px;
+	background:url("../images/logo020.png") no-repeat 0px top;
+	_background:url("../images/logo020.gif") no-repeat 0px top;
+	height: 74px;
+	}
+
+	
+.web_Header_logo a{
+	display:block;
+	height: 74px;
+	}
+.web_Header_search{
+	margin-top:20px;
+	position:relative;
+	width:500px;
+	}
+.web_Header_Join{
+	float:right;
+	margin-top:20px;
+	}
+	
+/*-----------------搜索样式--------------------*/
+button, input, select, textarea {
+    font-size: 100%;
+    margin: 0;
+    outline: 0 none;
+    padding: 0;
+    vertical-align: middle;
+}
+#search-kw, #search-btn{
+    font-size: 14px;
+}
+#search-logo, .search-form, .hot-kw-box {
+    position: absolute;
+    top: 10px;
+}
+#search-logo {
+    height: 30px;
+    overflow: hidden;
+    text-align: center;
+    width: 97px;
+}
+/*.baidu img { margin-top: 0;}
+.google img { margin-top: -218px;}*/
+.baidu a,.google a { display:block; height:34px;}
+.baidu a { 
+	background:url("../images/webNav_img/baidu_logo.png") no-repeat center top;
+	_background:url("../images/webNav_img/baidu_logo.gif") no-repeat center top;
+	}
+.google a { 
+	background:url("../images/webNav_img/google_logo.png") no-repeat center top;
+	_background:url("../images/webNav_img/google_logo.gif") no-repeat center top;
+	}
+
+.search-form { height: 50px; left: 98px; width: 400px;}
+#search-kw {
+    background-color:#fff;
+    border: 1px solid #CDCDCD; height: 28px; line-height: 28px; margin-right: 5px; padding-left: 6px; width: 300px;}
+#search-btn { cursor: pointer; height: 30px; text-align: center; width: 82px;}
+#search-radio { display: block; height: 24px; line-height: 24px; 
+	/*background:url("../images/webNav_img/webSearch_button_bg.jpg") repeat-x right center;*/}
+#search-radio label { display: block; float: left; padding: 0 11px 0 14px; *+padding:0 11px 0 20px; position: relative;}
+#search-radio label input { left: 0; position: absolute; top: 6px; *+top:2px;}
+
+/*-----------------搜索样式 end--------------------*/
+
+	
+	
+.header_navLink{
+	float:left;
+	margin-top:36px;
+	padding-left:10px;}
+.header_navLink li{
+	float:left;
+	padding:0 10px;
+	border-right:1px solid #c3c3c3;
+	}
+.header_navLink li.last{
+	border:0;}
+	
+.NavPart_block{
+	border:1px solid #ccc;
+	line-height:1.2em\9;
+	*+height:100%;
+	_height:100%;
+	}	
+.NavPart_head{
+	border-bottom:1px solid #c3c3c3;
+	background-color:#f9f9f9;
+	} 
+.NavPart_head h1,.NavPart_head ul.content_nav{
+	float:left;
+	border-bottom:0;
+	background:none;
+	}
+.NavPart_head h1{
+	color:#d28814;
+	padding:8px 10px 7px;
+	font-size:16px;
+	font-weight:bold;}
+	
+.NavPart_head ul.content_nav{
+	padding:9px 13px 0;
+	height:auto;}
+
+.NavPart_head ul.content_nav li{
+	margin-right:2px;
+	}
+	
+.NavPart_head ul.content_nav li a,.NavPart_head ul.content_nav li a:visited{
+	padding:4px 15px;
+	}
+	
+.NavPart_head span{
+	display:block;
+	float:left;
+	padding-top:15px;
+	}	
+
+ul.link_while,ul.Tool_block{
+	padding:10px 0 10px 10px;
+	}
+
+ul.link_while li{
+	width:155px;
+	padding:0px 4px 4px 4px;
+	float:left;
+	}
+
+ul.link_while li a,ul.link_while li a:visited{
+	display:block;
+	padding:5px;
+	line-height:1.58em;
+	border-bottom:1px dotted #ccc;
+	color:#434343;
+	overflow:hidden;
+	height:16px;
+	}
+	
+ul.link_while li a:hover{
+	background-color:#fdabd7;
+	/*background-color:#eb2d94;*/
+	text-decoration:none;
+	color:#fff;
+	border-bottom:1px solid #ce985a;
+	border-radius:5px;
+	}
+	
+ul.Tool_block{
+	_width:95%;
+	}
+
+ul.Tool_block li{
+	float:left;
+	*+width:68px;
+	padding-left:26px;
+	}
+	
+ul.Tool_block li .Tool_img{
+	width:68px;
+	height:69px; 
+	margin:0 auto;
+	overflow:hidden;
+	}
+ul.Tool_block li h2{
+	text-align:center;
+	padding-top:5px;}
+	
+/*.Hotel img{ margin-left:0;}
+.Train img{ margin-left:-97px;}
+.Flight img{ margin-left:-193px;}
+.Bus img{ margin-left:-289px;}
+.Taxi img{ margin-left:-385px;}
+.Map img{ margin-left:-480px;}
+.Food img{ margin-left:-576px;}
+.Weather img{ margin-left:-672px;}
+.TimeZone img{ margin-left:-768px;}
+.Currency img{ margin-left:-864px;}
+*/
+.web_footer{
+	text-align:center;
+	padding-bottom:30px;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

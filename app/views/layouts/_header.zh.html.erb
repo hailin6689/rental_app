@@ -19,6 +19,10 @@
             //		location.href = "http://www.souduanzu.com/list/price_day/1500,2000/" + q;
         });
 
+        <%=yield(:selected) %>
+        //$("ul.header_top_nav li:eq(0)").addClass("selected");
+
+
         $("ul.header_top_nav li").hover(function () {
             $(this).addClass("hover");
         }, function () {
@@ -37,7 +41,10 @@
             $(className).css({ "display": "block" });
         });
         
-        plot_chat();
+        if (typeof plot_chat == "function")
+            plot_chat();
+
+
     });
 </script>
 <%
@@ -47,12 +54,12 @@ provide(:base_url,"http://www.souduanzu.com")
 	<div class="header_top">
     	<div class="bg_div header_top_bgColor">
             <ul class="header_top_nav">
-            	<li class="selected"><a href="/">首页</a></li>
-				<li class="line_text"><a href="<%=yield(:base_url)%>/SiteNav">短租导航</a></li>
+            	<li><a href="/">首页</a></li>
+				<li class="line_text"><a href="/SiteNav">短租导航</a></li>
 <!--				<li><a href="/app">移动搜短租<img class="new" align="new" src="/images/news.gif"></a></li>-->
                 <!--<li><a href="/Media">媒体报道</a></li>-->
-                <li><a href="<%=yield(:base_url)%>/AboutUs">关于我们</a></li>
-                <li><a href="<%=yield(:base_url)%>/ContactUs">联系我们</a></li>
+                <li><a href="/AboutUs">关于我们</a></li>
+                <li><a href="/ContactUs">联系我们</a></li>
                 
             </ul>
             

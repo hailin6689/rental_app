@@ -4,6 +4,13 @@ RentalApp::Application.routes.draw do
   match '/show', to: 'rentals#show'
   match '/home', to: 'rentals#home'
 
+  get '/SiteNav' => 'rentals#sitenav'
+  get '/Media' => 'rentals#press'
+  get '/AboutUs' => 'rentals#about'
+  get '/ContactUs' => 'rentals#contact'
+  get '/ShowHouse/:id' => 'rentals#show'
+  get '/list/*specs' => 'rentals#list'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

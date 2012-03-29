@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -16,11 +16,19 @@
 <%= render "layouts/header" %>
 
 <div class="bg_div">
+<%if @show_animation %>
+     <%=render 'layouts/main_animate'%>
+<%end%>
 <%= yield %>
-<%= render 'layouts/footer' %>
+<%if @show_footer_city %>
+<%= render 'layouts/footer_city' %>
+<%end %>
+<%= render 'layouts/footer_copyright' %>
 </div>
 
-<%= render 'layouts/gotobtn' %>
+<%if @show_gotobtn %>
+  <%=render 'layouts/gotobtn'%>
+<%end%>
 
 <%= debug(params) if Rails.env.development? %>
 </body>

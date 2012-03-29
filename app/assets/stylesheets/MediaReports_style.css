@@ -1,0 +1,44 @@
+@charset "utf-8";
+/* CSS Document */
+.AU_flashBlock{ height:auto;}
+.MediaR_body{ background-color:#fff; /*padding:0 10px;*/}
+.MR_body_header{ padding:15px 0 10px; color:#333; /**+padding-bottom:0;*/ height:auto; overflow:hidden;}
+.MR_body_header h1{ float:left; font-size:24px; font-weight:bold; padding:0; line-height:normal;}
+.MR_body_header p{ float:right; padding:10px 0 0; }
+
+.MR_content{ border:1px solid #c6c6c6; border-top:2px solid #9F94FC; height:auto; }
+.MR_content .MR_con_left{ width:672px; float:left; border-right:1px solid #c3c3c3;}
+.MR_con_left .MR_con_LBlock{ border-bottom:1px solid #c3c3c3; padding:10px;}
+.MR_con_left .MR_con_LBlock .MR_con_LBlock_header{ height:auto; overflow:hidden;}
+.MR_con_left .MR_con_LBlock .MR_con_LBlock_header h1{ float:left; /*font-weight:bold;*/ margin-bottom:10px;}
+.MR_con_left .MR_con_LBlock .MR_con_LBlock_header h1 a{ font-size:18px;}
+.MR_con_left .MR_con_LBlock span{float:right; display:block; padding-top:5px; }
+
+.MR_con_left .MR_con_LBlock .LBlock_body{ border-top:1px dashed #e3e3e3; padding-top:10px;}
+/*.LBlock_img,.LBlock_content{ float:left;}*/
+.MR_con_LBlock .LBlock_body .LBlock_img{ float:left; margin-right:15px; width:186px;}
+.hidden{display:none;}
+.MR_con_LBlock .LBlock_body .LBlock_img img{ border:1px solid #ccc;}
+.MR_con_LBlock .LBlock_body .LBlock_img a{ display:block; padding-top:10px;}
+
+.MR_con_LBlock .LBlock_body .LBlock_content{ color:#555; float:left; width:450px;}
+.MR_con_LBlock .LBlock_body .LBlock_content p{ padding-bottom:10px; line-height:1.5em; }
+.MR_con_left .page_go{ padding:8px 0; background-color:#eee; text-align:center; height:auto; overflow:hidden;}
+
+.MR_con_right{ padding:10px; float:right; width:280px;}
+
+.MR_con_right ul{}
+.MR_con_right ul li{ margin-bottom:10px;}
+.MR_con_right ul li img{}
+.MR_con_right ul li p{ padding:10px 0;}
+
+
+
+
+
+
+
+
+
+
+

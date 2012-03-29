@@ -2,6 +2,9 @@ class RentalsController < ApplicationController
   attr_accessor :totalRentalItems, :totalRentalSites
 
   def home
+     @show_animation = false
+	 @show_gotobtn=true
+	 @show_footer_city = true
      @totalRentalItems = 95238
 	 @totalRentalSites = 621
 
@@ -33,5 +36,30 @@ class RentalsController < ApplicationController
   end
 
   def show
+  end
+
+  def press
+  end
+
+  def contact
+     @show_animation = true
+	 @show_gotobtn=false
+  end
+
+  def about
+     @show_animation = true
+	 @show_gotobtn=false
+  end
+
+  def sitenav
+	 @show_footer_city = false
+  end
+
+  def list
+	queryHash = params[:specs].split("/")
+	if queryHash.has_key?("q")
+	else
+
+	end
   end
 end
