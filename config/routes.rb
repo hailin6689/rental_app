@@ -3,6 +3,7 @@ RentalApp::Application.routes.draw do
 
   match '/show', to: 'rentals#show'
   match '/home', to: 'rentals#home'
+  get '/' => 'rentals#home'
 
   get '/SiteNav' => 'rentals#sitenav'
   get '/Media' => 'rentals#press'
