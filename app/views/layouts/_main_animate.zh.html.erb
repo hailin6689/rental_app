@@ -27,3 +27,48 @@
     <!--动画 end-->
 </div>
 <!--主体动画 end-->
+
+<script>
+    $(function () {
+        $("ul.AU_Left_menu li").hover(function () {
+            $(this).addClass("hover");
+        }, function () {
+            $(this).removeClass("hover");
+        }).click(function () {
+            $(this).addClass("selected");
+            $("ul.AU_Left_menu li").not($(this)).removeClass("selected");
+        });
+
+        $('#slides').slides({
+            preload: true,
+            preloadImage: 'images/blue_spinner.gif',
+            play: 5000,
+            pause: 2500,
+            hoverPause: true,
+            animationStart: function () {
+                $('.caption').animate({
+                    bottom: -76
+                }, 100);
+            },
+            animationComplete: function (current) {
+                $('.caption').animate({
+                    bottom: -76
+                }, 200);
+                //				if (window.console && console.log) {
+                //					 example return of current slide number
+                //					console.log(current);
+                //				};
+            }
+        });
+
+        $("#slides .next,#slides .prev").hide();
+        $("#container").hover(
+		function () {
+		    $("#slides .next,#slides .prev").fadeIn("slow");
+		}, function () {
+		    $("#slides .next,#slides .prev").fadeOut("slow");
+		});
+
+    })
+</script>
+
