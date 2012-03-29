@@ -69,8 +69,8 @@ button, input, select, textarea {
 #search-btn { cursor: pointer; height: 30px; text-align: center; width: 82px;}
 #search-radio { display: block; height: 24px; line-height: 24px; 
 	/*background:url("../images/webNav_img/webSearch_button_bg.jpg") repeat-x right center;*/}
-#search-radio label { display: block; float: left; padding: 0 11px 0 14px; *+padding:0 11px 0 20px; position: relative;}
-#search-radio label input { left: 0; position: absolute; top: 6px; *+top:2px;}
+#search-radio label { display: block; float: left; padding: 0 11px 0 14px; padding:0 11px 0 20px; position: relative;}
+#search-radio label input { left: 0; position: absolute; top: 6px; top:2px;}
 
 /*-----------------搜索样式 end--------------------*/
 
@@ -91,7 +91,7 @@ button, input, select, textarea {
 .NavPart_block{
 	border:1px solid #ccc;
 	line-height:1.2em\9;
-	*+height:100%;
+	height:100%;
 	_height:100%;
 	}	
 .NavPart_head{
@@ -162,7 +162,7 @@ ul.Tool_block{
 
 ul.Tool_block li{
 	float:left;
-	*+width:68px;
+	width:68px;
 	padding-left:26px;
 	}
 	
