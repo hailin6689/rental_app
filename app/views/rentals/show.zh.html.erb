@@ -1,0 +1,388 @@
+<!--面包导航-->
+<!--
+<div class="bg_div">
+    <div class="header_nav margin_bottom_10">
+        <div class="header_nav_position">
+            <a href='/'>首页</a> &raquo; 北京市日租/短租房 &raquo; 今日家园春节特惠        </div>
+    </div>
+</div>
+-->
+<!--面包导航 end-->
+
+<!--主体块-->
+<div class="room_body">
+	<!--左边块-->
+	<div class="float_left room_floatLeft">
+    	<div class="roomShow_block margin_bottom_15 padd_more">
+        	<div class="roomType_title"><h1 style="font-size:20px"><%=@house["title"] %></h1></div>
+			<div class="roomType_From">
+              <%=@house["facilities"] %>
+			  <div class="clear"></div>
+            </div>
+ 		    <div class="roomType_Detailed">
+            	<div class="roomTypeDetailed_left">
+                	
+                        <div class="roomImg_big">
+                            <div class=" mainbody">
+                                <div>
+<!--                                    <img src="http://img.souduanzu.com/2/big/2012-02-01/0d9df89c24ee1fdf33314674bb6c9162a78c35bd.jpg" alt="今日家园春节特惠" title="今日家园春节特惠"/>-->
+
+                                    <img src="<%=full_image_path(@house['source_id'],@house['images_key'],'big') %>" alt="<%=@house['title']%>" title="<%=@house['title']%>"/>
+                                </div>
+                            </div>
+                        </div>
+                        
+                   <a href="#" class="roomVerify_position">  
+						                	</a>
+
+					                    <!-- JiaThis Button BEGIN -->
+                    <div id="ckepop"><span class="jiathis_txt">分享到：</span>
+                    <a class="jiathis_button_qzone"></a>
+                    <a class="jiathis_button_tsina"></a>
+                    <a class="jiathis_button_tqq"></a>
+                    <a class="jiathis_button_renren"></a>
+                    <a class="jiathis_button_kaixin001"></a>
+                    <a class="jiathis_button_douban"></a>
+                    <a class="jiathis_button_xiaoyou"></a>
+                    <a class="jiathis_button_t163"></a>
+                    <a class="jiathis_button_baidu"></a>
+                    <a class="jiathis_button_hi"></a>
+                    <a class="jiathis_button_qq"></a>
+                    <a class="jiathis_button_tsohu"></a>
+                    <a class="jiathis_button_taobao"></a>
+                    <a class="jiathis_button_tifeng"></a>
+                    <a class="jiathis_button_51"></a>
+                    <a href="http://www.jiathis.com/share?uid=1579407" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+                    <a class="jiathis_counter_style"></a>
+                    </div>
+                    <script type="text/javascript" >
+                        var jiathis_config = {
+                            data_track_clickback: true,
+                            summary: "",
+                            hideMore: false
+                        }
+                    </script>
+                    <script type="text/javascript" src="http://v2.jiathis.com/code/jia.js?uid=1579407" charset="utf-8"></script>
+                    <!-- JiaThis Button END -->
+					                </div>
+        
+                <div class="roomTypeDetailed_right">
+                	<h1><%=@house["house_type"] %></h1>
+                    <div class="roomTypeDetailed_Price"><span>￥<font><%=@house["price_day"] %></font>元/晚</span></div>
+                    <div class="clear"></div>
+                    <ul class="room_Detailed_list">
+						<li>
+                            <span class="typeName">地&nbsp;&nbsp;&nbsp;&nbsp;址</span>
+                            <span class="typeValue"><%=@house["address"] %></span>
+                            <div class="clear"></div>
+                        </li>
+												                        <li>
+                            <span class="typeName">卧室数</span>
+                            <span class="typeValue"><%=@house["beds"] %>个</span>
+                            <div class="clear"></div>
+                        </li>
+												                        <li>
+                            <span class="typeName">卫生间数</span>
+                            <span class="typeValue"><%=@house["bathrooms"] %>个</span>
+                            <div class="clear"></div>
+                        </li>
+												                        <li>
+                            <span class="typeName">床位类型</span>
+                            <span class="typeValue"><%=@house["bed_type"] %></span>
+                            <div class="clear"></div>
+                        </li>
+																		<!--
+						                        <li>
+                            <span class="typeName">便利设施</span>
+                            <span class="typeValue">可否吸烟,厨房,停车位,电视,24小时热水,有线电视,淋浴,有线宽带,热水浴缸,超市,大厦内电梯,银行,电冰箱,无障碍设施,保安,对讲机门禁,暖气</span>
+                            <div class="clear"></div>
+                        </li>
+ 												-->
+												                        <li>
+                            <span class="typeName">商家名称</span>
+                            <span class="typeValue"><%=source_name(@house["source_id"]) %></span>
+                            <div class="clear"></div>
+                        </li>
+                    </ul>
+                    <div class="clear"></div>
+                    <div class="roomTypeDetailed_button bor_radius_5">
+                    	<a href="/JumpTo/BEA74452558A2D5A" target="_blank">预&nbsp;&nbsp;订</a>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        
+        <div class="roomMap_block margin_bottom_15">
+        	<ul class="content_nav">
+            	<li class="selected" >
+                	<a href="#">周边环境</a>
+                </li>
+                <div class="clear"></div>
+            </ul>
+            <div class="padd_more">
+            	<div style="width:682px;height:340px;border:1px solid gray; overflow:hidden;" id="container"></div>
+            </div>
+            
+        </div>
+    </div>
+    <!--左边块 end-->
+    
+    <!--右边块-->
+    <div class="float_right room_floatRight">
+        <div class="roomRight_block02 margin_bottom_15">
+        	<div class="roomRight_title_block">
+            	<h1>附近房间</h1>
+                <div class="clear"></div>
+            </div>
+            <div class="padd_more">
+            	<ul class="roomShow_list">
+
+<%
+@houses.each do |house|
+ %>
+				  	<li >
+                    	<div class="recommendRoom_img">
+                        	<a href="/ShowHouse/6B3EBB155F73B4C0" target="_blank"><img src="<%=full_image_path(house['source_id'],house['images_key'],'small') %>" title="<%=house['title'] %>" alt="<%=house['title'] %>" width="105" height="75"/></a>
+                        </div>
+                        <div class="recommendRoom_type">
+                        	<a href="/ShowHouse/6B3EBB155F73B4C0" target="_blank" title="<%=house['title'] %>"><%=house['title'] %></a>
+                            <p>地址：<font><%=house['address'] %></font></p>
+                            <span class="TColor_999"><font>￥<%=house['price_day'] %></font>/晚</span>
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+<%
+end
+ %>
+ 
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    <!--右边块 end-->
+    <div class="clear"></div>
+</div>
+
+<script language="JavaScript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDffO6cRmxwr74yUs4TC8ctPMvS4lf7G8w&sensor=true"></script>
+<script type="text/javascript">
+    $(function () {
+/*        $("ul.roomShow_list li").hover(function () {
+            $(this).css("backgroundColor", "#fafafa");
+        }, function () {
+            $(this).css("background", "#fff");
+        });
+*/
+        $("ul.room_Detailed_list li:even").addClass("alt");
+        //	toggle_source_desc();
+        function toggle_source_desc() {
+            var len = 300;
+            var content = $("#source_desc").html();
+
+            var span = $("<span>");
+            var a = $("<a>");
+            a.css('color', '#006699');
+            span.html(content.substring(0, len));
+            var a_html = content.length > len ? "查看全部>>" : "";
+            a.html(a_html);
+            a.bind('click', function () {
+                if (a.html().indexOf("全部") > 0) {
+                    a.html("<<收起");
+                    span.html(content);
+                } else {
+                    a.html("查看全部>>");
+                    span.html(content.substring(0, len));
+                }
+            });
+            $("#source_desc").empty();
+            $("#source_desc").append(span);
+            $("#source_desc").append(a);
+
+        }
+
+    }) 
+</script>
+<script>
+var geocoder;
+var map = null;
+var subjectMarker = null;
+var centerPosition = null;    
+var infoWindow = null;
+var houseList = null;
+function initialize() {
+    var subjectHouse = new data('<%=@house["title"]%>','<%=@house["price_day"]%>','<%=@house["address"]%>', <%=@house["lat"]%>, <%=@house["lng"] %>);
+    var latlng = new google.maps.LatLng(subjectHouse.lat,subjectHouse.lng);
+    var myOptions = {
+        zoom: 13,
+        center: latlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    
+    map = new google.maps.Map(document.getElementById("container"), myOptions);
+
+
+    //alert("address: " + subjectHouse.address );
+
+    geocoder = new google.maps.Geocoder();
+    geocoder.geocode({address: subjectHouse.address}, function (result, status) {
+    //alert("called geocoder " + status + " google OK = " + google.maps.GeocoderStatus.OK);
+    if (status == google.maps.GeocoderStatus.OK) {
+            //alert("address =" + result[0].formatted_address);
+
+            centerPosition = result[0].geometry.location;
+            subjectMarker = new google.maps.Marker({
+                    position: centerPosition,
+                    title: result[0].formatted_address
+                });
+            
+            //alert ("subjectMarker=" + subjectMarker);
+
+             map.setCenter(centerPosition);
+
+            subjectMarker.setIcon(new google.maps.MarkerImage('http://chart.googleapis.com/chart?chst=d_map_spin&chld=0.8|0|FF8800|15|_|'));   
+            
+            createMarkerClickHandler(subjectMarker,subjectHouse);
+
+            subjectMarker.setMap(map);
+
+            }
+     });
+     
+
+    //fill out up to 8 data objects
+<%
+    sData = "houseList = ["
+    first = true
+
+    @houses.each do |house|
+        if ( first )
+            first = false
+            sData << "new data('"
+        else
+            sData << ",new data('"
+        end
+            
+        sData << house["title"]
+
+        sData << "','"
+        sData << house["price_day"]
+        sData << "','"
+            
+        sData << house["address"]
+        sData << "',"
+            
+        sData << house["lat"].to_s()
+        sData << ","
+
+        sData << house["lng"].to_s()
+        sData << ")"
+     
+    end
+        
+    sData << "];"
+%>
+
+    <%=sData%>
+
+    //alert ("houseList" + houseList.length);
+    var i=0;
+    for (i=0; i<houseList.length;i++)
+    {
+        var newMarker = null;
+
+        //alert ("houseList[i] i=" + i + " address=" + houseList[i].address);
+        geocoder.geocode({address: houseList[i].address }, function (result, status) {
+        //alert("called geocoder " + status + " google OK = " + google.maps.GeocoderStatus.OK);
+        if (status == google.maps.GeocoderStatus.OK) {
+            //alert("i = " + i );
+            newMarker = new google.maps.Marker({
+                    position: result[0].geometry.location,
+                    title: result[0].formatted_address
+                });
+            createMarkerClickHandler(newMarker, houseList[i]);
+
+            newMarker.setMap(map);
+
+            }
+        });
+
+    }
+
+}
+
+function createMarkerClickHandler(marker, info) {
+  google.maps.event.addListener(marker, 'mouseover', function() {
+  //        alert("createMarkerClickHandler num=" + num);
+  infoWindowCreate2(info,marker);
+  });
+
+//  google.maps.event.addListener(marker, 'mouseout', function() {
+//  infoWindowHide();
+//  });
+}
+
+function infoWindowCreate2(info,marker) {
+    if ( info != null && marker != null ) {
+        var contentString =  "<div style='width:320px; height:75px;font:15px Arial; font-style:normal;'>" + info.title;
+          
+        contentString += "<table><tr><td>Price:</td><td>";
+        
+        var salesPrice = "" + info.price;
+        if (salesPrice == "" )salesPrice = "-";
+
+        contentString += salesPrice;
+          
+        contentString += "</td></tr></table></div>";
+
+
+//        if ( infoWindow == null )
+        infoWindow = new google.maps.InfoWindow({
+                content: contentString
+            });  
+/*        else
+        {
+            infoWindow.setContent(contentString);
+        }
+*/  
+        infoWindow.open(map, marker);
+  }
+}
+
+function infoWindowHide() {
+  if ( infoWindow != null )
+    infoWindow.close();
+}
+
+
+function data(title,price,address,lat,lng) {
+
+this.title = title;
+this.price = price;
+this.address = "中国" + address;
+this.lat = lat;
+this.lng = lng;
+
+}
+
+window.onload = function () {
+    initialize();
+    //search("中国北京市海淀区今日家园");
+}
+
+    function search(address) {
+        geocoder.geocode({ 'address': address }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                map.setCenter(results[0].geometry.location);
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: results[0].geometry.location
+                });
+            }
+        });
+    }
+
+
+
+</script>
+<!--主体块 end-->

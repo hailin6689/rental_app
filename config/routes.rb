@@ -1,7 +1,7 @@
 RentalApp::Application.routes.draw do  
   resources :rentals
 
-  match '/show', to: 'rentals#show'
+  #match '/show', to: 'rentals#show'
   match '/home', to: 'rentals#home'
   get '/' => 'rentals#home'
 

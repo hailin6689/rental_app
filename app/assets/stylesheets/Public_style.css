@@ -550,23 +550,46 @@ a.roomVerify_position:link,a.roomVerify_position:visited{
 	text-align:center;
 	vertical-align:middle;
 	width:423px; 
-	height:282px;
+	height:272px;
 	background-color:#aaa;
 }
 .mainbody p{
 	position:static;
-	position:absolute;
+	/*position:absolute;*/
 	top:50%
 }
+
+
 .mainbody p img {
 	position:static;
-	position:relative;
-	top:-50%;left:-50%;
+	/*position:relative;*/
+	top:-50%;
+	left:-50%;
 	text-align:center;
 	margin:0 auto;
-	max-height:282px;
+	max-height:272px;
 	max-width:423px;
 	}
+	
+.mainbody div{
+	position:static;
+	/*position:absolute;*/
+	top:50%
+}
+
+
+.mainbody div img {
+	position:static;
+	/*position:relative;*/
+	top:-50%;
+	left:-50%;
+	text-align:center;
+	margin:0 auto;
+	max-height:272px;
+	max-width:423px;
+	vertical-align: middle;
+	}
+	
 /*--------------图片对齐控制 end------------*/
 
 /*--------------弹窗公共样式------------*/

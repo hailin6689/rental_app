@@ -3,11 +3,14 @@
 
 module ApplicationHelper
 
-	def full_image_path(source_id,image_name)
+	def full_image_path(source_id,image_name,img_size)
+		if img_size.empty?
+			img_size="medium"
+		end
 		if image_name.empty? || !image_name.end_with?(".jpg")
-		   "http://img.souduanzu.com/default/default_medium.jpg"			
+		   "http://img.souduanzu.com/default/default_#{img_size}.jpg"			
 		else
-			"http://img.souduanzu.com/#{source_id}/medium/#{image_name}"
+			"http://img.souduanzu.com/#{source_id}/#{img_size}/#{image_name}"
 		end
 	end
 

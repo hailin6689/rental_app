@@ -15,14 +15,15 @@ class RentalsController < ApplicationController
     
 	 @houses = Rental.select("source_id,title,price_day,images_key").where("id IN (31432,50628,31429,45301,45307,59)")
 
-	 n = 0
-	 while n < @houses.length
-	 logger.debug "[1] n=" + n.to_s()
-	 house = @houses[n]
-	 logger.debug house["title"]
-	 logger.debug "[2]n=" + n.to_s()
-	 n += 1
-	 end
+	 #n = 0
+	 #while n < @houses.length
+	 #logger.debug "[1] n=" + n.to_s()
+
+	 #house = @houses[n]
+	 #logger.debug house["title"]
+	 #logger.debug "[2]n=" + n.to_s()
+	 #n += 1
+	 #end
 
 	 #logger.debug "after house selection"
 
@@ -36,6 +37,19 @@ class RentalsController < ApplicationController
   end
 
   def show
+	 @show_footer_city = true
+	#rental_id = params[:id]
+
+	#retrieve the data
+	houses = Rental.select("source_id,title,city,district,address,house_type,price_day,images_key,beds,bathrooms,bed_type,facilities,lat,lng").where("id = ?",params[:id].to_i())
+	@house = houses[0]
+
+	#logger.debug @house["title"]
+
+	#nearby houses up to 8
+	@houses = Rental.select("id,source_id,title,address,price_day,images_key,lat,lng").where("city = ? AND district = ? AND id != ?",@house["city"], @house["district"], params[:id].to_i()).limit(8)
+
+	logger.debug @houses.length
   end
 
   def press
