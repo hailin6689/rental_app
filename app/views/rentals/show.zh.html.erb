@@ -36,7 +36,7 @@
 						                	</a>
 
 					                    <!-- JiaThis Button BEGIN -->
-                    <div id="ckepop"><span class="jiathis_txt">分享到：</span>
+<!--                    <div id="ckepop"><span class="jiathis_txt">分享到：</span>
                     <a class="jiathis_button_qzone"></a>
                     <a class="jiathis_button_tsina"></a>
                     <a class="jiathis_button_tqq"></a>
@@ -63,6 +63,7 @@
                         }
                     </script>
                     <script type="text/javascript" src="http://v2.jiathis.com/code/jia.js?uid=1579407" charset="utf-8"></script>
+                    -->
                     <!-- JiaThis Button END -->
 					                </div>
         
@@ -165,7 +166,7 @@ end
     <div class="clear"></div>
 </div>
 
-<script language="JavaScript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDffO6cRmxwr74yUs4TC8ctPMvS4lf7G8w&sensor=true"></script>
+<script language="JavaScript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript">
     $(function () {
 /*        $("ul.roomShow_list li").hover(function () {
@@ -206,16 +207,13 @@ end
 <script>
 var geocoder;
 var map = null;
-var subjectMarker = null;
-var centerPosition = null;    
-var infoWindow = null;
 var houseList = null;
 function initialize() {
     var subjectHouse = new data('<%=@house["title"]%>','<%=@house["price_day"]%>','<%=@house["address"]%>', <%=@house["lat"]%>, <%=@house["lng"] %>);
-    var latlng = new google.maps.LatLng(subjectHouse.lat,subjectHouse.lng);
+    var centerPosition = new google.maps.LatLng(subjectHouse.lat,subjectHouse.lng);
     var myOptions = {
-        zoom: 13,
-        center: latlng,
+        zoom: 15,
+        center: centerPosition,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     }
     
@@ -224,31 +222,37 @@ function initialize() {
 
     //alert("address: " + subjectHouse.address );
 
-    geocoder = new google.maps.Geocoder();
+/*    geocoder = new google.maps.Geocoder();
     geocoder.geocode({address: subjectHouse.address}, function (result, status) {
     //alert("called geocoder " + status + " google OK = " + google.maps.GeocoderStatus.OK);
-    if (status == google.maps.GeocoderStatus.OK) {
-            //alert("address =" + result[0].formatted_address);
+    if (status == google.maps.GeocoderStatus.OK) 
+    {
+            alert("lat lng =" + result[0].geometry.location.toString());
 
             centerPosition = result[0].geometry.location;
+
             subjectMarker = new google.maps.Marker({
                     position: centerPosition,
                     title: result[0].formatted_address
                 });
-            
+*/            
+            subjectMarker = new google.maps.Marker({
+                    position: centerPosition,
+                    title: subjectHouse.address
+                });
             //alert ("subjectMarker=" + subjectMarker);
 
-             map.setCenter(centerPosition);
+             //map.setCenter(centerPosition);
 
             subjectMarker.setIcon(new google.maps.MarkerImage('http://chart.googleapis.com/chart?chst=d_map_spin&chld=0.8|0|FF8800|15|_|'));   
             
             createMarkerClickHandler(subjectMarker,subjectHouse);
 
             subjectMarker.setMap(map);
-
+/*
             }
      });
-     
+*/     
 
     //fill out up to 8 data objects
 <%
@@ -285,34 +289,125 @@ function initialize() {
 
     <%=sData%>
 
-    //alert ("houseList" + houseList.length);
+    var swLat = 90, swLng = 180,neLat = -90,neLng = -180;
+    swLat = Math.min (swLat,subjectHouse.lat);
+    swLng = Math.min(swLng,subjectHouse.lng);
+    neLat = Math.max(neLat,subjectHouse.lat);
+    neLng = Math.max(neLng,subjectHouse.lng);
+
+    var PRECISION = 0.00005;
+    //sort houseList by latlng
+    houseList.sort(function(a,b){if (Math.abs(a.lat-b.lat)<0.00005) return a.lng-b.lng; else return a.lat-b.lat;});
+
     var i=0;
+    var house;
+    var newHouseList = new Array();
+
+
+    var latPrev =0, lngPrev = 0, j=0;
+    var newHouse;
     for (i=0; i<houseList.length;i++)
     {
-        var newMarker = null;
+        house = houseList[i];
 
-        //alert ("houseList[i] i=" + i + " address=" + houseList[i].address);
-        geocoder.geocode({address: houseList[i].address }, function (result, status) {
+        swLat = Math.min (swLat,house.lat);
+        swLng = Math.min(swLng,house.lng);
+        neLat = Math.max(neLat,house.lat);
+        neLng = Math.max(neLng,house.lng);
+
+
+        if ( i == 0 )
+        {
+            newHouseList.push(house);
+            j++;
+        }
+        else
+        {
+            if ( Math.abs(house.lat-latPrev) < PRECISION && Math.abs(house.lng-lngPrev) < PRECISION )
+            {
+               newHouse = newHouseList[j-1];
+               //alert ("newHouseList length=" + newHouseList.length + " newHouse=" + newHouse + "prev house=" + houseList[i-1]);
+
+               newHouse.sameAddrList.push(house);
+            }
+            else
+            {
+                newHouseList.push(house);            
+                j++;
+            }
+        }
+
+        latPrev = house.lat;
+        lngPrev = house.lng;
+    }
+
+    //alert ("houseList" + houseList.length);
+    for (i=0; i<newHouseList.length;i++)
+    {
+        var newMarker = null;
+        house = newHouseList[i];
+
+        // look for the house with the same location as the subject house
+        if ( Math.abs(house.lat-subjectHouse.lat) < PRECISION && Math.abs(house.lng-subjectHouse.lng) < PRECISION )
+        {
+            //found it and add to the subject house
+
+            subjectHouse.sameAddrList.push(house);
+            var k =0;
+            for (k=0;k<house.sameAddrList.length;k++)
+            {
+                subjectHouse.sameAddrList.push(house.sameAddrList[k]);
+            }
+            house.sameAddressList = null; //null the reference
+            
+            //recreate infoWindow
+            createMarkerClickHandler(subjectMarker,subjectHouse);
+
+            continue;
+        }
+
+        //alert ("houseList[i] i=" + i + " address=" + houseList[i].address + " lat:lng " + house.lat + " " + house.lng);
+/*        geocoder.geocode({address: house.address }, function (result, status) {
         //alert("called geocoder " + status + " google OK = " + google.maps.GeocoderStatus.OK);
         if (status == google.maps.GeocoderStatus.OK) {
             //alert("i = " + i );
+            //alert("lat lng =" + result[0].geometry.location.toString() + " from db: " + house.lat + " " + house.lng);
+
             newMarker = new google.maps.Marker({
                     position: result[0].geometry.location,
                     title: result[0].formatted_address
                 });
-            createMarkerClickHandler(newMarker, houseList[i]);
+*/
+            newMarker = new google.maps.Marker({
+                    position: new google.maps.LatLng(house.lat,house.lng),
+                    title: house.address
+                });
+            createMarkerClickHandler(newMarker, house);
 
             newMarker.setMap(map);
 
-            }
+/*            }
         });
-
+        
+*/
     }
+
+    swLat = Math.max(swLat-0.001,-90);
+    swLng = Math.max(swLng-0.001,-180);
+    neLat = Math.min(neLat+0.001,90);
+    neLng = Math.min(neLng+0.001,180);
+    var swLatLng = new google.maps.LatLng(swLat,swLng);
+    var neLatLng = new google.maps.LatLng(neLat,neLng);
+
+    //alert("sw=" + swLatLng + " ne=" + neLatLng);
+
+    map.fitBounds(new google.maps.LatLngBounds(swLatLng,neLatLng) );
+
 
 }
 
 function createMarkerClickHandler(marker, info) {
-  google.maps.event.addListener(marker, 'mouseover', function() {
+  google.maps.event.addListener(marker, 'click', function() {
   //        alert("createMarkerClickHandler num=" + num);
   infoWindowCreate2(info,marker);
   });
@@ -322,21 +417,43 @@ function createMarkerClickHandler(marker, info) {
 //  });
 }
 
+var infoWindow = null;
 function infoWindowCreate2(info,marker) {
     if ( info != null && marker != null ) {
-        var contentString =  "<div style='width:320px; height:75px;font:15px Arial; font-style:normal;'>" + info.title;
+        var contentString =  "<div style='width:320px; font:15px Arial;'><h1 style='font-weight:bold;'>" + info.title + "</h1>";
           
-        contentString += "<table><tr><td>Price:</td><td>";
+        contentString += "<table style='padding: 5px 0;'><tr><td>地址:</td><td>";
+        contentString += info.address;
+        contentString += "</td></tr><tr><td>价格:￥</td><td>";
         
         var salesPrice = "" + info.price;
         if (salesPrice == "" )salesPrice = "-";
 
         contentString += salesPrice;
           
-        contentString += "</td></tr></table></div>";
+        contentString += "/晚</td></tr></table>";
 
+        var i = 0;
+        var house;
+        for ( i =0; i < info.sameAddrList.length; i++)
+        {   
+            house = info.sameAddrList[i];
+                
+            contentString += "<h1 style='padding-top:5px;font-weight:bold;'>" + house.title + "</h1><table style='padding: 5px 0;'><tr><td>地址:</td><td>";
+            contentString += house.address;
 
-//        if ( infoWindow == null )
+            contentString += "</td></tr><tr><td>价格:￥</td><td>";
+            
+            salesPrice = "" + info.price;
+            if (salesPrice == "" )salesPrice = "-";
+            contentString += salesPrice;          
+            contentString += "/晚</td></tr></table>";
+        }
+
+        contentString += "</div>";
+
+        if ( infoWindow != null ) infoWindow.close();
+
         infoWindow = new google.maps.InfoWindow({
                 content: contentString
             });  
@@ -346,6 +463,7 @@ function infoWindowCreate2(info,marker) {
         }
 */  
         infoWindow.open(map, marker);
+        //setTimeout("infoWindow.close();",1000);
   }
 }
 
@@ -359,10 +477,10 @@ function data(title,price,address,lat,lng) {
 
 this.title = title;
 this.price = price;
-this.address = "中国" + address;
+this.address = address;
 this.lat = lat;
 this.lng = lng;
-
+this.sameAddrList = new Array();
 }
 
 window.onload = function () {

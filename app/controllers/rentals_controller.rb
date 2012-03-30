@@ -13,7 +13,7 @@ class RentalsController < ApplicationController
 	 #logger.debug brand["url"]
 	 #end
     
-	 @houses = Rental.select("source_id,title,price_day,images_key").where("id IN (31432,50628,31429,45301,45307,59)")
+	 @houses = Rental.select("id,source_id,title,price_day,images_key").where("id IN (31432,50628,31429,45301,45307,59)")
 
 	 #n = 0
 	 #while n < @houses.length
@@ -47,7 +47,13 @@ class RentalsController < ApplicationController
 	#logger.debug @house["title"]
 
 	#nearby houses up to 8
-	@houses = Rental.select("id,source_id,title,address,price_day,images_key,lat,lng").where("city = ? AND district = ? AND id != ?",@house["city"], @house["district"], params[:id].to_i()).limit(8)
+	#@houses = Rental.select("id,source_id,title,address,price_day,images_key,lat,lng").where("city = ? AND district = ? AND id != ?",@house["city"], @house["district"], params[:id].to_i()).limit(8)
+
+	minLat = @house["lat"] - 0.05
+	maxLat = @house["lat"] + 0.05
+	minLng = @house["lng"] - 0.05
+	maxLng = @house["lng"] + 0.05
+	@houses = Rental.select("id,source_id,title,address,price_day,images_key,lat,lng").where("id != ? AND lat > ? AND lat < ? AND lng > ? and lng < ?", params[:id].to_i(),minLat,maxLat,minLng,maxLng).limit(8)
 
 	logger.debug @houses.length
   end

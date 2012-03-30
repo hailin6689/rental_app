@@ -312,7 +312,7 @@ house=@houses[n]
           
           <div class="recommendRoom_left" style="width:145px;">
 
-            <a href="/ShowHouse/AAA83BF2B1D8CFB3" target="_blank">
+            <a href="/ShowHouse/<%=house['id'] %>" target="_blank">
               <img src="<%=full_image_path(house['source_id'],house['images_key'],'medium')%>" alt="<%=house["title"]%>" title="<%=house["title"]%>" width="145" height="92"/>
             </a>
 
@@ -333,7 +333,7 @@ house = @houses[n]
 %>
             <div class="recommendRoom_right">
               
-                <a href="/ShowHouse/AAA83BF2B1D8CFB3" target="_blank">
+                <a href="/ShowHouse/<%=house['id'] %>" target="_blank">
                   <img src="<%=full_image_path(house['source_id'],house['images_key'],'medium')%>" alt="<%=house["title"]%>" title="<%=house["title"]%>" width="145" height="92"/>
                 </a>
 
